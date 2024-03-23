@@ -5,7 +5,7 @@
 <!-- Mirrored from mannatthemes.com/metrica_mvc5/default/tables-datatable.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 07 Jan 2024 12:51:15 GMT -->
 <head>
         <meta charset="utf-8" />
-        <title>Metrica - Admin & Dashboard Template</title>
+        <title>ChatBot Admission</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="" name="author" />
@@ -48,8 +48,8 @@
                             <div class="page-title-box">
                                 <div class="float-right">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="javascript:void(0);">Metrica</a></li>
-                                        <li class="breadcrumb-item"><a href="javascript:void(0);">UI Kit</a></li>
+                                        <li class="breadcrumb-item"><a href="javascript:void(0);">Chatbot Admission</a></li>
+                                        <li class="breadcrumb-item"><a href="javascript:void(0);">Admin</a></li>
                                         <li class="breadcrumb-item active"></li>
                                     </ol>
                                 </div>
