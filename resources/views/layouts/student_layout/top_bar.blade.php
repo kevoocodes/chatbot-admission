@@ -129,7 +129,17 @@
                     <a class="dropdown-item" href="#"><i class="dripicons-lock text-muted mr-2"></i> Lock
                         screen</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#"><i class="dripicons-exit text-muted mr-2"></i> Logout</a>
+
+
+                    <a class="dropdown-item" href="{{ route('student.logout') }}"
+                        onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                        <i class="dripicons-exit text-muted mr-2"></i>
+
+                        Logout</a>
+                    <form id="logout-form" action="{{ route('student.logout') }}" method="POST">
+                        @csrf
+                    </form>
                 </div>
             </li>
             <li class="mr-2">

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('lastName');
             $table->string('phoneNumber');
             $table->string('nidaNumber');
+            $table->string('nacteNumber')->unique();
             $table->string('email');
             $table->string('address');
             $table->date('dateOfBirth');

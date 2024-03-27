@@ -33,3 +33,6 @@ Route::get('/student_details', [\App\Http\Controllers\Admin\StudentDetailsContro
 Route::get('/admission', [\App\Http\Controllers\Student\AdmissionController::class, 'index'])->name('student.admission');
 Route::get('/student_dashboard', [\App\Http\Controllers\Student\StudentDashboardController::class, 'index'])->name('student.dashboard');
 Route::get('/student_profile', [\App\Http\Controllers\Student\StudentProfileController::class, 'index'])->name('student.profile');
+Route::post('/student_register', [\App\Http\Controllers\Auth\StudentRegistrationController::class, 'register'])->name('student.register');
+Route::post('/student_logout', [\App\Http\Controllers\Auth\LogoutController::class, 'logout'])->name('student.logout');
+Route::post('/authenticate', [\App\Http\Controllers\Auth\StudentLoginController::class, 'authenticate'])->name('authenticate');
