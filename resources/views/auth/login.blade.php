@@ -89,11 +89,10 @@
                                     <div class="form-group row mt-4">
                                         <div class="col-sm-6">
                                             <div class="custom-control custom-switch switch-success">
-                                                <input type="checkbox" class="custom-control-input"
-                                                    id="customSwitchSuccess">
-                                                <label class="custom-control-label text-muted"
-                                                    for="customSwitchSuccess">Remember me</label>
+                                                <input type="checkbox" class="custom-control-input" id="customSwitchSuccess" name="remember">
+                                                <label class="custom-control-label text-muted" for="customSwitchSuccess">Remember me</label>
                                             </div>
+                                            
                                         </div><!--end col-->
                                         <div class="col-sm-6 text-right">
                                             <a href="{{ route('forgot-password.students') }}"

@@ -9,7 +9,8 @@ use Illuminate\Support\Facades\Auth;
 class StudentLoginController extends Controller
 {
     //all function associated with login
-    public function index() {
+    public function index()
+    {
         return view('auth.login');
     }
 
@@ -20,10 +21,9 @@ class StudentLoginController extends Controller
             'password' => 'required'
         ]);
 
-       // dd($credentials);
-
-        if(Auth::attempt($credentials))
-        {
+        // Add 'remember' key to the credentials array
+        $remember = $request->has('remember'); // Check if remember checkbox is checked
+        if (Auth::attempt($credentials, $remember)) {
             $request->session()->regenerate();
             return redirect()->route('student.dashboard')
                 ->withSuccess('You have successfully logged in!');
@@ -31,7 +31,6 @@ class StudentLoginController extends Controller
 
         return back()->withErrors([
             'nidaNumber' => 'Your provided credentials do not match in our records.',
-        ])->onlyInput('nidaNumber');
-
-    } 
+        ])->withInput($request->only('nidaNumber', 'remember'));
+    }
 }

@@ -45,22 +45,20 @@
                                 <form class="form-horizontal auth-form my-4" action="{{ route('student.register') }}"
                                     method="POST">
                                     @csrf
-                                    <div class="form-group">
-                                        <label for="username">Nact No</label>
-                                        <div class="input-group mb-3">
-                                            <span class="auth-form-icon">
-                                                <i data-feather="user" class="icon-xs"></i>
-                                            </span>
-                                            <input type="text" class="form-control" name="nacte_no" id="username"
-                                                placeholder="Enter username"> <br>
-                                           
-                                        </div>
-                                        <small>
-                                            @error('nacte_no')
-                                                <span class="text-danger">{{ $message }}</span>
-                                            @enderror
-                                        </small>
-                                    </div><!--end form-group-->
+                                    <div class="error-messages">
+                                        @if (session('error'))
+                                            <div class="alert alert-danger">{{ session('error') }}</div>
+                                        @endif
+                                        @error('nacte_no')
+                                            <div class="text-danger">{{ $message }}</div>
+                                        @enderror
+                                        @error('useremail')
+                                            <div class="text-danger">{{ $message }}</div>
+                                        @enderror
+                                        @error('password')
+                                            <div class="text-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
 
                                     <div class="form-group">
                                         <label for="useremail">Email</label>
@@ -69,15 +67,27 @@
                                                 <i data-feather="mail" class="icon-xs"></i>
                                             </span>
                                             <input type="email" class="form-control" name="useremail" id="useremail"
-                                                placeholder="Enter Email"> <br>
-                                               
+                                                placeholder="Enter Email" required> <br>
+
                                         </div>
-                                        <small>
-                                            @error('useremail')
-                                                <span class="text-danger">{{ $message }}</span>
-                                            @enderror
-                                        </small>
+
                                     </div><!--end form-group-->
+
+
+                                    <div class="form-group">
+                                        <label for="username">Nact No</label>
+                                        <div class="input-group mb-3">
+                                            <span class="auth-form-icon">
+                                                <i data-feather="user" class="icon-xs"></i>
+                                            </span>
+                                            <input type="text" class="form-control" name="nacte_no" id="username"
+                                                placeholder="Enter username" required> <br>
+
+                                        </div>
+
+                                    </div><!--end form-group-->
+
+                              
 
                                     <div class="form-group">
                                         <label for="userpassword">Password</label>
@@ -86,14 +96,10 @@
                                                 <i data-feather="lock" class="icon-xs"></i>
                                             </span>
                                             <input type="password" class="form-control" name="password"
-                                                id="userpassword" placeholder="Enter password"> <br>
-                                               
+                                                id="userpassword" placeholder="Enter password" required> <br>
+
                                         </div>
-                                        <small>
-                                            @error('password')
-                                                <span class="text-danger">{{ $message }}</span>
-                                            @enderror
-                                        </small>
+
                                     </div><!--end form-group-->
 
                                     <div class="form-group">
@@ -103,8 +109,8 @@
                                                 <i data-feather="key" class="icon-xs"></i>
                                             </span>
                                             <input type="password" class="form-control" name="password_confirmation"
-                                                id="conf_password" placeholder="Enter Confirm Password">
-                                                
+                                                id="conf_password" placeholder="Enter Confirm Password" required>
+
                                         </div>
 
 
@@ -132,6 +138,10 @@
                                         </div><!--end col-->
                                     </div> <!--end form-group-->
                                 </form><!--end form-->
+                                <!-- Success Message (Displayed after form submission) -->
+                                @if (session('success'))
+                                    <div class="alert alert-success mt-3">{{ session('success') }}</div>
+                                @endif
                             </div><!--end /div-->
 
                             <div class="m-3 text-center text-muted">
