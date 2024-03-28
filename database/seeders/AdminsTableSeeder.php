@@ -17,12 +17,13 @@ class AdminsTableSeeder extends Seeder
         //
           // Create a single admin record
           Admin::create([
-            'admin_id' => 1, // Adjust according to your requirements
-            'firstName' => 'Kelvin',
-            'lastName' => 'Msindai',
+            'firstname' => 'Kelvin',
+            'middlename' => 'Aron',
+            'lastname' => 'Msindai',
+            'email' => 'kelvin@example.com',
             'username' => 'admin',
-            'password' => Hash::make('password'), // Change to your desired default password
             'role' => 'admin',
+            'password' => Hash::make('password'), // password
         ]);
     }
 }
