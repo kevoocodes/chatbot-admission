@@ -18,9 +18,10 @@ Route::get('/', function () {
 });
 
 
-//patient authentication middleware
+//student authentication middleware
 Route::middleware(['auth'])->group(function () {
     Route::get('/student_dashboard', [\App\Http\Controllers\Student\StudentDashboardController::class, 'index'])->name('student.dashboard');
+    Route::get('/admission', [\App\Http\Controllers\Student\AdmissionController::class, 'index'])->name('student.admission');
 });
 
 
@@ -43,7 +44,7 @@ Route::post('/admin_authenticate', [\App\Http\Controllers\Admin\AdminController:
 Route::post('/admin_logout', [\App\Http\Controllers\Admin\AdminController::class, 'logout'])->name('admin.logout');
 
 //students routes 
-Route::get('/admission', [\App\Http\Controllers\Student\AdmissionController::class, 'index'])->name('student.admission');
+
 
 Route::get('/student_profile', [\App\Http\Controllers\Student\StudentProfileController::class, 'index'])->name('student.profile');
 Route::post('/student_register', [\App\Http\Controllers\Auth\StudentRegistrationController::class, 'register'])->name('student.register');

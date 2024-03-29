@@ -117,26 +117,7 @@
                             </div>
                         </div><!--end card-body-->
                     </div><!--end card-->
-                    <div class="account-social text-center mt-4">
-                        <h6 class="my-4">Or Login With</h6>
-                        <ul class="list-inline mb-4">
-                            <li class="list-inline-item">
-                                <a href="#" class="">
-                                    <i class="fab fa-facebook-f facebook"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#" class="">
-                                    <i class="fab fa-twitter twitter"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#" class="">
-                                    <i class="fab fa-google google"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div><!--end account-social-->
+                
                 </div><!--end auth-page-->
             </div><!--end col-->
         </div><!--end row-->
