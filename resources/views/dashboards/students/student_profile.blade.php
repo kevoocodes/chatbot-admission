@@ -20,12 +20,12 @@
             <div class="page-title-box">
                 <div class="float-right">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="javascript:void(0);">Metrica</a></li>
-                        <li class="breadcrumb-item"><a href="javascript:void(0);">Doctors</a></li>
-                        <li class="breadcrumb-item active">Dr.Profile</li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0);">Chatbot</a></li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0);">Admssion</a></li>
+                        <li class="breadcrumb-item active">Profile</li>
                     </ol>
                 </div>
-                <h4 class="page-title">Dr.Profile</h4>
+                <h4 class="page-title">Student.Profile</h4>
             </div><!--end page-title-box-->
         </div><!--end col-->
     </div>
@@ -45,8 +45,8 @@
                                         </span>
                                     </div>
                                     <div class="met-profile_user-detail">
-                                        <h5 class="met-user-name">Dr.Rosa Dodson</h5>                                                        
-                                        <p class="mb-0 met-user-name-post">MS Orthopaedic Surgeon</p>
+                                        <h5 class="met-user-name">Student Name</h5>                                                        
+                                        <p class="mb-0 met-user-name-post">Course Name</p>
                                     </div>
                                 </div>                                                
                             </div><!--end col-->
@@ -56,19 +56,7 @@
                                     <li class="mt-2"><i class="dripicons-mail text-info font-18 mt-2 mr-2"></i> <b> Email </b> : mannat.theme@gmail.com</li>
                                     <li class="mt-2"><i class="dripicons-location text-info font-18 mt-2 mr-2"></i> <b>Location</b> : USA</li>
                                 </ul>
-                                <div class="button-list btn-social-icon">                                                
-                                    <button type="button" class="btn btn-blue btn-circle">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </button>
-
-                                    <button type="button" class="btn btn-secondary btn-circle ml-2">
-                                        <i class="fab fa-twitter"></i>
-                                    </button>
-
-                                    <button type="button" class="btn btn-pink btn-circle  ml-2">
-                                        <i class="fab fa-dribbble"></i>
-                                    </button>
-                                </div>
+                   
                             </div><!--end col-->
                         </div><!--end row-->
                     </div><!--end f_profile-->                                                                                
@@ -76,17 +64,12 @@
                 <div class="card-body">
                     <ul class="nav nav-pills mb-0" id="pills-tab" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" id="general_detail_tab" data-toggle="pill" href="#general_detail">General</a>
+                            <a class="nav-link active" id="general_detail_tab" data-toggle="pill" href="#general_detail">Student information</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="experience_detail_tab" data-toggle="pill" href="#experience_detail">Experience</a>
+                            <a class="nav-link" id="experience_detail_tab" data-toggle="pill" href="#experience_detail">Admission Management</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="portfolio_detail_tab" data-toggle="pill" href="#portfolio_detail">Portfolio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="settings_detail_tab" data-toggle="pill" href="#settings_detail">Settings</a>
-                        </li>
+                       
                     </ul>        
                 </div><!--end card-body-->
             </div><!--end card-->
@@ -124,24 +107,7 @@
                                                 
                                            </div>
                                        </div>
-                                       <div class="col-lg-4">
-                                            <div class="row">
-                                                <div class="col-lg-6 mx-auto">
-                                                    <div class="own-detail bg-blue">
-                                                        <h1>8+</h1>
-                                                        <h5>Year Experience</h5>
-                                                    </div>
-                                                    <div class="own-detail own-detail-project bg-secondary">
-                                                        <h1>1550</h1>
-                                                        <h5>Copmlete Operation</h5>
-                                                    </div>
-                                                    <div class="own-detail own-detail-happy bg-success">
-                                                        <h1>98%</h1>
-                                                        <h5>Result</h5>
-                                                    </div>
-                                                </div>                                        
-                                            </div>                                                                                                                       
-                                       </div>
+                                     
                                    </div>         
                                 </div><!--end card-body-->
                             </div><!--end card-->

@@ -82,7 +82,7 @@
                 </div>
                 <ul class="nav metismenu">
 
-                    <li class="nav-item"><a class="nav-link" href="{{ route('student.profile') }}">Add Admission</a>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('student.profile') }}">Profile</a>
                     </li>
 
 
@@ -97,7 +97,7 @@
                 </div>
                 <ul class="nav">
 
-                    <li class="nav-item"><a class="nav-link" href="pages-gallery.html">Change Password</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{route('students.changepassword')}}">Change Password</a></li>
                 </ul>
             </div><!-- end Pages -->
            

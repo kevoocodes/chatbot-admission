@@ -23,6 +23,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/student_dashboard', [\App\Http\Controllers\Student\StudentDashboardController::class, 'index'])->name('student.dashboard');
     Route::get('/admission', [\App\Http\Controllers\Student\AdmissionController::class, 'index'])->name('student.admission');
     Route::post('/students-admission', [\App\Http\Controllers\Student\AdmissionController::class, 'store'])->name('students.store');
+    Route::get('/students-change-password', [\App\Http\Controllers\Auth\ChangePasswordController::class, 'index'])->name('students.changepassword');
+    Route::post('/update-password', [\App\Http\Controllers\Auth\ChangePasswordController::class, 'updatePassword'])->name('update-password');
 });
 
 

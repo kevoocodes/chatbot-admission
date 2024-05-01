@@ -56,13 +56,13 @@
                                     @csrf
 
                                     <div class="form-group">
-                                        <label for="username">Username</label>
+                                        <label for="username">Necta No</label>
                                         <div class="input-group mb-3">
                                             <span class="auth-form-icon">
                                                 <i data-feather="user" class="icon-xs"></i>
                                             </span>
                                             <input type="text" name="nidaNumber" class="form-control" id="username"
-                                                placeholder="Enter nidaNumber">
+                                                placeholder="Enter Nacte No">
                                         </div>
 
                                         @if ($errors->has('nidaNumber'))
@@ -113,7 +113,7 @@
 
                             <div class="m-3 text-center text-muted">
                                 <p class="">Don't have an account ? <a href="{{ route('register.students') }}"
-                                        class="text-primary ml-2">Free Resister</a></p>
+                                        class="text-primary ml-2">Free Register</a></p>
                             </div>
                         </div><!--end card-body-->
                     </div><!--end card-->
