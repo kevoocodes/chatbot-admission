@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('student_id')->constrained('students')->onDelete('cascade');
             $table->foreignId('course_id')->constrained('courses')->onDelete('cascade');
             $table->date('applicationDate');
+            $table->string('session_name');
             $table->string('status'); // Consider using an enum for status
             $table->timestamps();
         });

@@ -2,10 +2,10 @@
 <html lang="en">
 
     
-<!-- Mirrored from mannatthemes.com/metrica_mvc5/default/tables-datatable.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 07 Jan 2024 12:51:15 GMT -->
+<!-- Mirrored from mannatthemes.com/metrica_mvc5/default/forms-wizard.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 07 Jan 2024 12:51:00 GMT -->
 <head>
         <meta charset="utf-8" />
-        <title>ChatBot Admission</title>
+        <title>Admission Chatbot</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="" name="author" />
@@ -14,12 +14,8 @@
         <!-- App favicon -->
         <link rel="shortcut icon" href="assets/images/favicon.ico">
 
-        <!-- DataTables -->
-        <link href="https://mannatthemes.com/metrica_mvc5/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-        <link href="https://mannatthemes.com/metrica_mvc5/plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-        <!-- Responsive datatable examples -->
-        <link href="https://mannatthemes.com/metrica_mvc5/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" /> 
-
+         <!--Form Wizard-->
+         <link rel="stylesheet" href="https://mannatthemes.com/metrica_mvc5/plugins/jquery-steps/jquery.steps.css">
 
         <!-- App css -->
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -28,16 +24,18 @@
         <link href="assets/css/metisMenu.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
 
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
     </head>
 
     <body>
-        <!-- leftbar-tab-menu -->
   
         @include('layouts/admin_layout/left_navigation')
 <!-- end leftbar-tab-menu-->
 
 <!-- Top Bar Start -->
-@include('layouts/admin_layout/top_bar')
+    @include('layouts/admin_layout/top_bar')
 
         <!-- Top Bar End -->
 
