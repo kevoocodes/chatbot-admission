@@ -77,7 +77,7 @@
                                             </span>
                                         </div>
                                         <div class="met-profile_user-detail">
-                                            <h5 class="met-user-name">Kelvin Aron Msindai</h5>
+                                            <h5 class="met-user-name">Student Fullname</h5>
                                             <p class="mb-0 met-user-name-post"></p>
                                         </div>
                                     </div>
@@ -85,12 +85,12 @@
                                 <div class="col-lg-4 ml-auto">
                                     <ul class="list-unstyled personal-detail">
                                         <li class=""><i class="dripicons-phone mr-2 text-info font-18"></i> <b>
-                                                phone </b> : +91 23456 78910</li>
+                                                phone </b> : </li>
                                         <li class="mt-2"><i class="dripicons-mail text-info font-18 mt-2 mr-2"></i>
-                                            <b> Email </b> : mannat.theme@gmail.com</li>
+                                            <b> Email </b> </li>
                                         <li class="mt-2"><i
                                                 class="dripicons-location text-info font-18 mt-2 mr-2"></i>
-                                            <b>Location</b> : USA</li>
+                                            <b>Location</b> </li>
                                     </ul>
 
                                 </div><!--end col-->

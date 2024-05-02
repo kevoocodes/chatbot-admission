@@ -1,6 +1,6 @@
 
 <footer class="footer text-center text-sm-left">
-    &copy; 2024 - 2024 Chatbot <span class="text-muted d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> by kevoocodes</span>
+    &copy; 2024 - 2024 Chatbot <span class="text-muted d-none d-sm-inline-block float-right">Developed by <i class="mdi mdi-heart text-danger"></i> by kevoocodes</span>
 </footer><!--end footer-->
 </div>
 <!-- end page content -->

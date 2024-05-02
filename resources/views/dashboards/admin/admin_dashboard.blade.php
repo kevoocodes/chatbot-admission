@@ -109,8 +109,8 @@
                         </div>
                         <div class="col-sm-8 col-8 align-self-center text-right">
                             <div class="ml-2">
-                                <p class="mb-1 text-muted">Classes</p>
-                                <h3 class="mt-0 mb-1 font-weight-semibold">890</h3>
+                                <p class="mb-1 text-muted">Departments</p>
+                                <h3 class="mt-0 mb-1 font-weight-semibold">8</h3>
                             </div>
                         </div>
                     </div>
@@ -142,7 +142,7 @@
                     <div class=" d-flex justify-content-between">
                         <img src="{{ asset('assets/images/widgets/monthly-re.png') }}" alt="" height="80">
                         <div class="align-self-center">
-                            <h2 class="mt-0 mb-2 font-weight-semibold">$955<span
+                            <h2 class="mt-0 mb-2 font-weight-semibold">Tsh 100000000<span
                                     class="badge badge-soft-success font-11 ml-2"><i class="fas fa-arrow-up"></i>
                                     8.6%</span></h2>
                             <h4 class="title-text mb-0">Yearly Revenue</h4>
@@ -154,7 +154,7 @@
                             <h6 class="m-0 font-weight-semibold">Last Year</h6>
                         </div>
                         <div class="align-self-center">
-                            <h4 class=" m-0 font-weight-semibold font-20">$3512.00</h4>
+                            <h4 class=" m-0 font-weight-semibold font-20">Tsh 90000000.00</h4>
                         </div>
                     </div>
                 </div><!--end card-body-->
@@ -179,7 +179,7 @@
                                     <th>Fullname</th>
                                     <th>Email</th>
                                     <th>Phone No</th>
-                                    <th>Company</th>
+                                    <th>Course</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr><!--end tr-->
@@ -191,7 +191,7 @@
                                             class="thumb-sm rounded-circle mr-2">Donald Gardner</td>
                                     <td>xyx@gmail.com</td>
                                     <td>+123456789</td>
-                                    <td>Starbucks coffee</td>
+                                    <td>Computer Science</td>
                                     <td> <span class="badge badge-md badge-soft-purple">New Lead</span></td>
                                     <td>
                                         <a href="#" class="mr-2"><i
@@ -204,7 +204,7 @@
                                             class="thumb-sm rounded-circle mr-2">Matt Rosales</td>
                                     <td>xyx@gmail.com</td>
                                     <td>+123456789</td>
-                                    <td>Mac Donald</td>
+                                    <td>Degree of Law</td>
                                     <td> <span class="badge badge-md badge-soft-purple">New Lead</span></td>
                                     <td>
                                         <a href="#" class="mr-2"><i
@@ -217,7 +217,7 @@
                                             class="thumb-sm rounded-circle mr-2">Michael Hill</td>
                                     <td>xyx@gmail.com</td>
                                     <td>+123456789</td>
-                                    <td>Life Good</td>
+                                    <td>Information Technology</td>
                                     <td> <span class="badge badge-md badge-soft-danger">Lost</span></td>
                                     <td>
                                         <a href="#" class="mr-2"><i
@@ -230,7 +230,7 @@
                                             class="thumb-sm rounded-circle mr-2">Nancy Flanary</td>
                                     <td>xyx@gmail.com</td>
                                     <td>+123456789</td>
-                                    <td>Flipcart</td>
+                                    <td>Account</td>
                                     <td> <span class="badge badge-md badge-soft-purple">New Lead</span></td>
                                     <td>
                                         <a href="#" class="mr-2"><i
@@ -243,7 +243,7 @@
                                             class="thumb-sm rounded-circle mr-2">Dorothy Key</td>
                                     <td>xyx@gmail.com</td>
                                     <td>+123456789</td>
-                                    <td>Adidas</td>
+                                    <td>Finance Management</td>
                                     <td> <span class="badge badge-md badge-soft-primary">Follow Up</span></td>
                                     <td>
                                         <a href="#" class="mr-2"><i
@@ -256,7 +256,7 @@
                                             class="thumb-sm rounded-circle mr-2">Joseph Cross</td>
                                     <td>xyx@gmail.com</td>
                                     <td>+123456789</td>
-                                    <td>Reebok</td>
+                                    <td>Banking and Finance</td>
                                     <td> <span class="badge badge-md badge-soft-success">Converted</span></td>
                                     <td>
                                         <a href="#" class="mr-2"><i
