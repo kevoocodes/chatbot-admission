@@ -11,10 +11,12 @@ use Illuminate\Support\Facades\Hash;
 class ChangePasswordController extends Controller
 {
     //
+    protected $data = [];
     public function index()
     {
 
-        return view('dashboards.students.change_password');
+        $this->data['user'] = Auth::User();
+        return view('dashboards.students.change_password', $this->data);
     }
 
     public function updatePassword(Request $request)

@@ -8,6 +8,7 @@ use App\Models\Course;
 use App\Models\Student;
 use App\Models\StudentAcademicInformation;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdmissionController extends Controller
 {
@@ -16,6 +17,7 @@ class AdmissionController extends Controller
     public function index() {
 
         $this->data['courses'] =  Course::All();
+        $this->data['user'] = Auth::User();
         return view('dashboards.students.admission', $this->data);
     }
 

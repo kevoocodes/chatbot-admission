@@ -49,8 +49,8 @@
         <div class="topbar-left">
             <a href="index.html" class="logo">
                 <span>
-                    <img src="{{ asset('assets/images/logo-dark.png') }}" alt="logo-large" class="logo-lg logo-dark">
-                    <img src="{{ asset('assets/images/logo.png') }}" alt="logo-large" class="logo-lg logo-light">
+                    <img style="width: 60px; height: 60px; margin-top: 20px" src="{{ asset('assets/images/turdako.png')}}" alt="logo-large" class="logo-lg logo-dark">
+                    
                 </span>
             </a>
         </div>

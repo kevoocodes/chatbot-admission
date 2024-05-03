@@ -70,7 +70,7 @@
                                 <div class="col-lg-4 align-self-center mb-3 mb-lg-0">
                                     <div class="met-profile-main">
                                         <div class="met-profile-main-pic">
-                                            <img src="assets/images/users/dr-4.jpg" alt=""
+                                            <img src="{{asset('assets/profile/profile.png')}}" alt=""
                                                 class="rounded-circle">
                                             <span class="fro-profile_main-pic-change">
                                                 <i class="fas fa-camera"></i>
