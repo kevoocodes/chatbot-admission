@@ -35,7 +35,7 @@
                         <div class="card-body">
                             <div class="px-3">
                                 <div class="auth-logo-box">
-                                    <a  href="index.html" class="logo logo-admin"><img style="width: 50px; height: 50px" src="assets/images/turdako.png" alt="
+                                    <a  href="index.html" class="logo logo-admin"><img style="width: 50px; height: 50px" src="{{ asset('assets/images/turdako.png')}}" alt="
                                             height="55" alt="logo" class="auth-logo"></a>
                                 </div><!--end auth-logo-box-->
 
