@@ -25,6 +25,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/students-admission', [\App\Http\Controllers\Student\AdmissionController::class, 'store'])->name('students.store');
     Route::get('/students-change-password', [\App\Http\Controllers\Auth\ChangePasswordController::class, 'index'])->name('students.changepassword');
     Route::post('/update-password', [\App\Http\Controllers\Auth\ChangePasswordController::class, 'updatePassword'])->name('update-password');
+    Route::get('/student_profile', [\App\Http\Controllers\Student\StudentProfileController::class, 'index'])->name('student.profile');
 });
 
 
@@ -47,7 +48,6 @@ Route::post('/admin_authenticate', [\App\Http\Controllers\Admin\AdminController:
 Route::post('/admin_logout', [\App\Http\Controllers\Admin\AdminController::class, 'logout'])->name('admin.logout');
 
 //students routes 
-Route::get('/student_profile', [\App\Http\Controllers\Student\StudentProfileController::class, 'index'])->name('student.profile');
 Route::post('/student_register', [\App\Http\Controllers\Auth\StudentRegistrationController::class, 'register'])->name('student.register');
 Route::post('/student_logout', [\App\Http\Controllers\Auth\LogoutController::class, 'logout'])->name('student.logout');
 Route::post('/authenticate', [\App\Http\Controllers\Auth\StudentLoginController::class, 'authenticate'])->name('authenticate');
