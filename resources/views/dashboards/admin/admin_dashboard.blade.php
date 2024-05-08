@@ -37,7 +37,7 @@
                         <div class="col-8 align-self-center text-right">
                             <div class="ml-2">
                                 <p class="mb-1 text-muted">New Registered</p>
-                                <h3 class="mt-0 mb-1 font-weight-semibold">1200</h3>
+                                <h3 class="mt-0 mb-1 font-weight-semibold">{{ $users }}</h3>
                             </div>
                         </div>
                     </div>
@@ -61,7 +61,7 @@
                         <div class="col-8 align-self-center text-right">
                             <div class="ml-2">
                                 <p class="mb-1 text-muted">Students</p>
-                                <h3 class="mt-0 mb-1 font-weight-semibold">40k</h3>
+                                <h3 class="mt-0 mb-1 font-weight-semibold">{{ $students }}</h3>
                             </div>
                         </div>
                     </div>
@@ -85,7 +85,7 @@
                         <div class="col-8 align-self-center text-right">
                             <div class="ml-2">
                                 <p class="mb-0 text-muted">Courses</p>
-                                <h3 class="mt-0 mb-1 font-weight-semibold d-inline-block">5</h3>
+                                <h3 class="mt-0 mb-1 font-weight-semibold d-inline-block">{{ $courses }}</h3>
                                 <span class="badge badge-soft-success mt-1 shadow-none">Courses</span>
                             </div>
                         </div>
@@ -110,7 +110,7 @@
                         <div class="col-sm-8 col-8 align-self-center text-right">
                             <div class="ml-2">
                                 <p class="mb-1 text-muted">Departments</p>
-                                <h3 class="mt-0 mb-1 font-weight-semibold">8</h3>
+                                <h3 class="mt-0 mb-1 font-weight-semibold">{{ $departments }}</h3>
                             </div>
                         </div>
                     </div>
@@ -180,7 +180,7 @@
                                     <th>Email</th>
                                     <th>Phone No</th>
                                     <th>Course</th>
-                                    <th>Status</th>
+
                                     <th>Action</th>
                                 </tr><!--end tr-->
                             </thead>
@@ -192,7 +192,7 @@
                                     <td>xyx@gmail.com</td>
                                     <td>+123456789</td>
                                     <td>Computer Science</td>
-                                    <td> <span class="badge badge-md badge-soft-purple">New Lead</span></td>
+
                                     <td>
                                         <a href="#" class="mr-2"><i
                                                 class="fas fa-edit text-info font-16"></i></a>
@@ -205,7 +205,7 @@
                                     <td>xyx@gmail.com</td>
                                     <td>+123456789</td>
                                     <td>Degree of Law</td>
-                                    <td> <span class="badge badge-md badge-soft-purple">New Lead</span></td>
+
                                     <td>
                                         <a href="#" class="mr-2"><i
                                                 class="fas fa-edit text-info font-16"></i></a>
@@ -218,7 +218,7 @@
                                     <td>xyx@gmail.com</td>
                                     <td>+123456789</td>
                                     <td>Information Technology</td>
-                                    <td> <span class="badge badge-md badge-soft-danger">Lost</span></td>
+
                                     <td>
                                         <a href="#" class="mr-2"><i
                                                 class="fas fa-edit text-info font-16"></i></a>
@@ -231,7 +231,7 @@
                                     <td>xyx@gmail.com</td>
                                     <td>+123456789</td>
                                     <td>Account</td>
-                                    <td> <span class="badge badge-md badge-soft-purple">New Lead</span></td>
+
                                     <td>
                                         <a href="#" class="mr-2"><i
                                                 class="fas fa-edit text-info font-16"></i></a>
@@ -244,7 +244,7 @@
                                     <td>xyx@gmail.com</td>
                                     <td>+123456789</td>
                                     <td>Finance Management</td>
-                                    <td> <span class="badge badge-md badge-soft-primary">Follow Up</span></td>
+
                                     <td>
                                         <a href="#" class="mr-2"><i
                                                 class="fas fa-edit text-info font-16"></i></a>
@@ -257,7 +257,7 @@
                                     <td>xyx@gmail.com</td>
                                     <td>+123456789</td>
                                     <td>Banking and Finance</td>
-                                    <td> <span class="badge badge-md badge-soft-success">Converted</span></td>
+
                                     <td>
                                         <a href="#" class="mr-2"><i
                                                 class="fas fa-edit text-info font-16"></i></a>

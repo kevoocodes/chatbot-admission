@@ -32,6 +32,11 @@ Route::middleware(['auth'])->group(function () {
 
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('/admin-dashboard', [\App\Http\Controllers\Admin\AdminDashboardController::class, 'index'])->name('admin.dashboard');
+    Route::get('/all_students', [\App\Http\Controllers\Admin\StudentAdminController::class, 'index'])->name('admin.all_students');
+    Route::get('/all_courses', [\App\Http\Controllers\Admin\CoursesController::class, 'index'])->name('admin.all_courses');
+    Route::get('/all_departments', [\App\Http\Controllers\Admin\DepartmentAdminController::class, 'index'])->name('admin.all_departments');
+    Route::get('/all_admission', [\App\Http\Controllers\Admin\AdmissionAdminController::class, 'all_admission'])->name('admin.all_admissions');
+    Route::get('/today_admission', [\App\Http\Controllers\Admin\AdmissionAdminController::class, 'today_admission'])->name('admin.today_admissions');
 });
 
 
@@ -41,7 +46,6 @@ Route::get('/student-forgot-password', [\App\Http\Controllers\Auth\StudentForgot
 
 
 //admin routes
-Route::get('/all_students', [\App\Http\Controllers\Student\StudentController::class, 'index'])->name('all_students');
 Route::get('/student_details', [\App\Http\Controllers\Admin\StudentDetailsController::class, 'index'])->name('student_details');
 Route::get('/admin_login', [\App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin.login');
 Route::post('/admin_authenticate', [\App\Http\Controllers\Admin\AdminController::class, 'authenticate'])->name('admin.authenticate');

@@ -12,17 +12,17 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
         <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link rel="shortcut icon" href="{{asset('assets/images/turdako.png')}}">
 
          <!--Form Wizard-->
          <link rel="stylesheet" href="https://mannatthemes.com/metrica_mvc5/plugins/jquery-steps/jquery.steps.css">
 
         <!-- App css -->
-        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/css/jquery-ui.min.css" rel="stylesheet">
-        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/css/metisMenu.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+        <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('assets/css/jquery-ui.min.css')}}" rel="stylesheet">
+        <link href="{{asset('assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('assets/css/metisMenu.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('assets/css/app.min.css')}}" rel="stylesheet" type="text/css" />
 
         <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
         <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
@@ -73,11 +73,9 @@
                                         <thead>
                                         <tr>
                                             <th>Fullname</th>
-                                            <th>Course</th>
-                                            <th>Department</th>
-                                            <th>Age</th>
-                                            <th>Registered Date</th>
                                             <th>Phonenumber</th>
+                                            <th>Nacte Number</th>
+                                            <th>Nida Number</th>
                                         </tr>
                                         </thead>
     
@@ -85,43 +83,18 @@
                                         <tbody>
                                         
                                         
-                                    
-                                        <tr>
-                                            <td>Jenette Caldwell</td>
-                                            <td>Computer Science</td>
-                                            <td>Computer Science</td>
-                                            <td>30</td>
-                                            <td>2011/09/03</td>
-                                            <td>0712999999</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Yuri Berry</td>
-                                            <td>Acount</td>
-                                            <td>Account</td>
-                                            <td>40</td>
-                                            <td>2009/06/25</td>
-                                            <td>071222222</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Caesar Vance</td>
-                                            <td>Information Technology</td>
-                                            <td>Computer Science</td>
-                                            <td>21</td>
-                                            <td>2011/12/12</td>
-                                            <td>0644123311</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Doris Wilder</td>
-                                            <td>Degree of  Law</td>
-                                            <td>law</td>
-                                            <td>23</td>
-                                            <td>2010/09/20</td>
-                                            <td>0212000000</td>
-                                        </tr>
+                                    @foreach ($students as $student)
+                                    <tr>
+                                        <td>{{$student->firstName}}</td>
+                                        <td>{{$student->phoneNumber}}</td>
+                                        <td>{{$student->nacteNumber}}</td>
+                                        <td>{{$student->nidaNumber}}</td>
+                                    </tr>
+                                    @endforeach
+                                            
                                        
-                                       
-                                       
-                                       
+                                        
+                            
                                       
                                     
                                         </tbody>
@@ -153,13 +126,13 @@
 
 
         <!-- jQuery  -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/jquery-ui.min.js"></script>
-        <script src="assets/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/js/metismenu.min.js"></script>
-        <script src="assets/js/waves.js"></script>
-        <script src="assets/js/feather.min.js"></script>
-        <script src="assets/js/jquery.slimscroll.min.js"></script>
+        <script src="{{asset('assets/js/jquery.min.js')}}"></script>
+        <script src="{{asset('assets/js/jquery-ui.min.js')}}"></script>
+        <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
+        <script src="{{asset('assets/js/metismenu.min.js')}}"></script>
+        <script src="{{asset('assets/js/waves.js')}}"></script>
+        <script src="{{asset('assets/js/feather.min.js')}}"></script>
+        <script src="{{asset('assets/js/jquery.slimscroll.min.js')}}"></script>
         <script src="https://mannatthemes.com/metrica_mvc5/plugins/apexcharts/apexcharts.min.js"></script> 
 
          <!-- Required datatable js -->
@@ -177,10 +150,10 @@
          <!-- Responsive examples -->
          <script src="https://mannatthemes.com/metrica_mvc5/plugins/datatables/dataTables.responsive.min.js"></script>
          <script src="https://mannatthemes.com/metrica_mvc5/plugins/datatables/responsive.bootstrap4.min.js"></script>
-         <script src="assets/pages/jquery.datatable.init.js"></script>
+         <script src="{{asset('assets/pages/jquery.datatable.init.js')}}"></script>
         
         <!-- App js -->
-        <script src="assets/js/app.js"></script>
+        <script src="{{asset('assets/js/app.js')}}"></script>
         
     </body>
 
