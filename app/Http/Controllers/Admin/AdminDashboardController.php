@@ -24,6 +24,9 @@ class AdminDashboardController extends Controller
         //count students
         $this->data['students'] = Student::count();
 
+        //return all students
+        $this->data['allstudents'] = Student::all();
+
         //count registered users
         $this->data['users'] = User::count();
         return view('dashboards.admin.admin_dashboard', $this->data);

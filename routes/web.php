@@ -29,7 +29,6 @@ Route::middleware(['auth'])->group(function () {
 });
 
 
-
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('/admin-dashboard', [\App\Http\Controllers\Admin\AdminDashboardController::class, 'index'])->name('admin.dashboard');
     Route::get('/all_students', [\App\Http\Controllers\Admin\StudentAdminController::class, 'index'])->name('admin.all_students');
@@ -37,6 +36,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('/all_departments', [\App\Http\Controllers\Admin\DepartmentAdminController::class, 'index'])->name('admin.all_departments');
     Route::get('/all_admission', [\App\Http\Controllers\Admin\AdmissionAdminController::class, 'all_admission'])->name('admin.all_admissions');
     Route::get('/today_admission', [\App\Http\Controllers\Admin\AdmissionAdminController::class, 'today_admission'])->name('admin.today_admissions');
+    Route::get('/add_course', [\App\Http\Controllers\Admin\CoursesController::class, 'view_add_course'])->name('admin.view_add_course');
+    Route::post('/add_course', [\App\Http\Controllers\Admin\CoursesController::class, 'store'])->name('admin.store_course');
+    Route::get('/add_department', [\App\Http\Controllers\Admin\DepartmentAdminController::class, 'view_add_department'])->name('admin.view_add_department');
+    Route::post('/add_department', [\App\Http\Controllers\Admin\DepartmentAdminController::class, 'store'])->name('admin.store_department');
 });
 
 

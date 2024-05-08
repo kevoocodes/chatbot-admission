@@ -79,7 +79,8 @@
                     <div class="row">
                         <div class="col-4 align-self-center">
                             <div class="icon-info">
-                                <i data-feather="headphones" class="align-self-center icon-lg icon-dual-success"></i>
+                                <i data-feather="book" class="align-self-center icon-lg icon-dual-success"></i>
+
                             </div>
                         </div>
                         <div class="col-8 align-self-center text-right">
@@ -186,11 +187,13 @@
                             </thead>
 
                             <tbody>
+
+                                @foreach ($allstudents as $student)
                                 <tr>
-                                    <td><img src="{{ asset('assets/images/users/user-10.jpg') }}" alt=""
-                                            class="thumb-sm rounded-circle mr-2">Donald Gardner</td>
-                                    <td>xyx@gmail.com</td>
-                                    <td>+123456789</td>
+                                    <td><img src="{{ asset('assets/profile/profile.png') }}" alt=""
+                                            class="thumb-sm rounded-circle mr-2">{{$student->firstName}}</td>
+                                    <td>{{$student->email}}</td>
+                                    <td>{{$student->phoneNumber}}</td>
                                     <td>Computer Science</td>
 
                                     <td>
@@ -199,71 +202,12 @@
                                         <a href="#"><i class="fas fa-trash-alt text-danger font-16"></i></a>
                                     </td>
                                 </tr><!--end tr-->
-                                <tr>
-                                    <td><img src="{{ asset('assets/images/users/user-9.jpg') }}" alt=""
-                                            class="thumb-sm rounded-circle mr-2">Matt Rosales</td>
-                                    <td>xyx@gmail.com</td>
-                                    <td>+123456789</td>
-                                    <td>Degree of Law</td>
-
-                                    <td>
-                                        <a href="#" class="mr-2"><i
-                                                class="fas fa-edit text-info font-16"></i></a>
-                                        <a href="#"><i class="fas fa-trash-alt text-danger font-16"></i></a>
-                                    </td>
-                                </tr><!--end tr-->
-                                <tr>
-                                    <td><img src="{{ asset('assets/images/users/user-8.jpg') }}" alt=""
-                                            class="thumb-sm rounded-circle mr-2">Michael Hill</td>
-                                    <td>xyx@gmail.com</td>
-                                    <td>+123456789</td>
-                                    <td>Information Technology</td>
-
-                                    <td>
-                                        <a href="#" class="mr-2"><i
-                                                class="fas fa-edit text-info font-16"></i></a>
-                                        <a href="#"><i class="fas fa-trash-alt text-danger font-16"></i></a>
-                                    </td>
-                                </tr><!--end tr-->
-                                <tr>
-                                    <td><img src="{{ asset('assets/images/users/user-7.jpg') }}" alt=""
-                                            class="thumb-sm rounded-circle mr-2">Nancy Flanary</td>
-                                    <td>xyx@gmail.com</td>
-                                    <td>+123456789</td>
-                                    <td>Account</td>
-
-                                    <td>
-                                        <a href="#" class="mr-2"><i
-                                                class="fas fa-edit text-info font-16"></i></a>
-                                        <a href="#"><i class="fas fa-trash-alt text-danger font-16"></i></a>
-                                    </td>
-                                </tr><!--end tr-->
-                                <tr>
-                                    <td><img src="{{ asset('assets/images/users/user-6.jpg') }}" alt=""
-                                            class="thumb-sm rounded-circle mr-2">Dorothy Key</td>
-                                    <td>xyx@gmail.com</td>
-                                    <td>+123456789</td>
-                                    <td>Finance Management</td>
-
-                                    <td>
-                                        <a href="#" class="mr-2"><i
-                                                class="fas fa-edit text-info font-16"></i></a>
-                                        <a href="#"><i class="fas fa-trash-alt text-danger font-16"></i></a>
-                                    </td>
-                                </tr><!--end tr-->
-                                <tr>
-                                    <td><img src="{{ asset('assets/images/users/user-5.jpg') }}" alt=""
-                                            class="thumb-sm rounded-circle mr-2">Joseph Cross</td>
-                                    <td>xyx@gmail.com</td>
-                                    <td>+123456789</td>
-                                    <td>Banking and Finance</td>
-
-                                    <td>
-                                        <a href="#" class="mr-2"><i
-                                                class="fas fa-edit text-info font-16"></i></a>
-                                        <a href="#"><i class="fas fa-trash-alt text-danger font-16"></i></a>
-                                    </td>
-                                </tr><!--end tr-->
+                                @endforeach
+                          
+                               
+                             
+                             
+                                
                             </tbody>
                         </table>
                     </div>
