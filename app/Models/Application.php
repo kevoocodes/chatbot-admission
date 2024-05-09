@@ -8,7 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Application extends Model
 {
     use HasFactory;
-
+    protected $fillable = [
+        'student_id',
+        'course_id',
+        'applicationDate',
+        'session_name',
+        'status',
+        // Add all other attributes you want to be fillable here
+    ];
     public function student()
     {
         return $this->belongsTo(Student::class);

@@ -76,9 +76,9 @@
                                             <th>Phonenumber</th>
                                             <th>Nacte Number</th>
                                             <th>Nida Number</th>
+                                            <th>Action</th>
                                         </tr>
                                         </thead>
-    
     
                                         <tbody>
                                         
@@ -89,6 +89,9 @@
                                         <td>{{$student->phoneNumber}}</td>
                                         <td>{{$student->nacteNumber}}</td>
                                         <td>{{$student->nidaNumber}}</td>
+                                        <td>
+                                            <a href="{{$student->id}}"><i class="fas fa-eye text-success font-16"></i></a>
+                                        </td>
                                     </tr>
                                     @endforeach
                                             

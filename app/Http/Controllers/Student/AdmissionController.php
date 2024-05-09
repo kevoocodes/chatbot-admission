@@ -21,39 +21,53 @@ class AdmissionController extends Controller
         return view('dashboards.students.admission', $this->data);
     }
 
+    public function get_all_admissions()
+    {
+        $user_id = Auth::User();
+        // Retrieve all admissions for the currently logged-in user
+        $this->data['admissions'] = Application::where('user_id', $user_id)->get();
+
+        // Redirect to the all_admission view, passing the admissions data
+        return view('dashboards.students.student_all_admission', $this->data);
+    }
+
     public function store(Request $request)
     {
+       
         // Validate the request data
-        $request->validate([
-            'firstname' => 'required|string|max:255',
-            'middlename' => 'nullable|string|max:255',
-            'lastname' => 'required|string|max:255',
-            'phoneNumber' => 'nullable|string|max:255',
-            'nidaNumber' => 'nullable|string|max:255',
-            'nacteNumber' => 'nullable|string|max:255|unique:students',
-            'email' => 'required|string|email|max:255',
-            'address' => 'required|string|max:255',
-            'region' => 'required|string|max:255',
-            'postalCode' => 'required|string|max:255',
-            'dateOfBirth' => 'required|date',
-            'gender' => 'required|string|max:255',
-            'parent' => 'nullable|string|max:255',
-            'parentPhonenumber' => 'nullable|string|max:255',
-            'nationality' => 'required|string|max:255',
-            'session_name' => 'required|string|max:255',
-            'course_id' => 'required|exists:courses,id',
-            'secondary_school_name' => 'nullable|string|max:255',
-            'secondary_school_location' => 'nullable|string|max:255',
-            'secondary_school_certificate' => 'nullable|file',
-            'high_school_name' => 'nullable|string|max:255',
-            'high_school_location' => 'nullable|string|max:255',
-            'diploma_course' => 'nullable|string|max:255',
-            'diploma_university' => 'nullable|string|max:255',
-            'university_certificate' => 'nullable|file',
-        ]);
+        // $request->validate([
+        //     'firstname' => 'required',
+        //     'middlename' => 'required',
+        //     'lastname' => 'required',
+        //     'phoneNumber' => 'required',
+        //     'nidaNumber' => 'required',
+        //     'nacteNumber' => 'required',
+        //     'email' => 'required|email',
+        //     'address' => 'required',
+        //     'region' => 'required',
+        //     'postalCode' => 'required',
+        //     'dateOfBirth' => 'required',
+        //     'gender' => 'required',
+        //     'parent' => 'required',
+        //     'parentPhonenumber' => 'required',
+        //     'nationality' => 'required',
+        //     'session_name' => 'required',
+        //     'course_id' => 'required',
+        //     'secondary_school_name' => 'required',
+        //     'secondary_school_location' => 'required',
+        //     'secondary_school_certificate' => 'required|file',
+        //     'high_school_name' => 'required',
+        //     'high_school_location' => 'required',
+        //     'diploma_course' => 'required',
+        //     'diploma_university' => 'required',
+        //     'university_certificate' => 'required|file',
+        // ]);
+
+     
 
         // Create a new student record
         $student = Student::create([
+            'student_id' => Auth::id(),
             'firstName' => $request->firstname,
             'middleName' => $request->middlename,
             'lastName' => $request->lastname,
@@ -71,9 +85,11 @@ class AdmissionController extends Controller
             'nationality' => $request->nationality,
         ]);
 
+        $studentId = $student->id;
+
         // Create a new application record
         $application = Application::create([
-            'student_id' => $student->id,
+            'student_id' => $studentId,
             'course_id' => $request->course_id,
             'applicationDate' => now(),
             'session_name' => $request->session_name,
@@ -81,16 +97,22 @@ class AdmissionController extends Controller
         ]);
 
         // Create a new student academic information record
+        $secondarySchoolCertificateFile = $request->file('secondary_school_certificate');
+        $universityCertificateFile = $request->file('university_certificate');
+        
         $academicInfo = StudentAcademicInformation::create([
+            'student_id' => $studentId,
             'secondary_school_name' => $request->secondary_school_name,
             'secondary_school_location' => $request->secondary_school_location,
-            'secondary_school_certificate' => $request->file('secondary_school_certificate')->store('certificates'),
+            'secondary_school_certificate' => $secondarySchoolCertificateFile ? file_get_contents($secondarySchoolCertificateFile->getRealPath()) : null,
             'high_school_name' => $request->high_school_name,
             'high_school_location' => $request->high_school_location,
             'diploma_course' => $request->diploma_course,
             'diploma_university' => $request->diploma_university,
-            'university_certificate' => $request->file('university_certificate')->store('certificates'),
+            'university_certificate' => $universityCertificateFile ? file_get_contents($universityCertificateFile->getRealPath()) : null,
         ]);
+        
+       
 
         // Redirect or return response
         return redirect()->route('student.admission')->with('success', 'Student information saved successfully.');

@@ -32,11 +32,11 @@
 
 <body>
 
-    @include('layouts/admin_layout/left_navigation')
+    @include('layouts/student_layout/left_navigation')
     <!-- end leftbar-tab-menu-->
 
     <!-- Top Bar Start -->
-    @include('layouts/admin_layout/top_bar')
+    @include('layouts/student_layout/top_bar')
 
     <!-- Top Bar End -->
 
@@ -87,7 +87,7 @@
                             <tbody>
 
 
-                                @foreach ($all_admissions as $admission)
+                                @foreach ($admissions as $admission)
                                     <tr>
                                         <td>{{ $admission->student->firstName }}</td>
                                         <td>{{ $admission->student->phoneNumber }}</td>
@@ -114,12 +114,12 @@
     </div><!-- container -->
 
     <!--  Modal content for the above example -->
-    @include('layouts/admin_layout/top_navigation_modal')
+    @include('layouts/student_layout/top_navigation_modal')
 
 
     <footer class="footer text-center text-sm-left">
-        &copy; 2019 - 2020 Metrica <span class="text-muted d-none d-sm-inline-block float-right">Crafted with <i
-                class="mdi mdi-heart text-danger"></i> by Mannatthemes</span>
+        &copy; 2024  <span class="text-muted d-none d-sm-inline-block float-right">Crafted with <i
+                class="mdi mdi-heart text-danger"></i> by kevoocodes</span>
     </footer><!--end footer-->
     </div>
     <!-- end page content -->

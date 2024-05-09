@@ -13,16 +13,21 @@ return new class extends Migration
     {
         Schema::create('student_academic_information', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('student_id');
+            $table->foreign('student_id')->references('id')->on('students');
             $table->string('secondary_school_name')->nullable();
             $table->string('secondary_school_location')->nullable();
-            $table->string('secondary_school_certificate')->nullable();
+            $table->binary('secondary_school_certificate')->nullable(); // Store as BLOB
             $table->string('high_school_name')->nullable();
             $table->string('high_school_location')->nullable();
             $table->string('diploma_course')->nullable();
             $table->string('diploma_university')->nullable();
-            $table->string('university_certificate')->nullable();
+            $table->binary('university_certificate')->nullable(); // Store as BLOB
             $table->timestamps();
         });
+        
     }
 
     /**

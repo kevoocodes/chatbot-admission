@@ -28,9 +28,6 @@
 
             </a><!--end MetricaPages-->
 
-          
-
-
         </nav><!--end nav-->
         <div class="pro-metrica-end">
             <a href="#" class="help" data-toggle="tooltip-custom" data-placement="right" data-trigger="hover"
@@ -70,8 +67,9 @@
                 <div class="title-box">
                     <h6 class="menu-title">Admission Management</h6>
                 </div>
-                <ul class="nav metismenu">
+                <ul class="nav metismenu"> student.all_admissions
                     <li class="nav-item"><a class="nav-link" href="{{ route('student.admission') }}">Add Admission</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('student.all_admissions') }}">Your Admissions</a>
                     </li>
                 </ul>
             </div><!-- end Crypto -->

@@ -26,6 +26,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/students-change-password', [\App\Http\Controllers\Auth\ChangePasswordController::class, 'index'])->name('students.changepassword');
     Route::post('/update-password', [\App\Http\Controllers\Auth\ChangePasswordController::class, 'updatePassword'])->name('update-password');
     Route::get('/student_profile', [\App\Http\Controllers\Student\StudentProfileController::class, 'index'])->name('student.profile');
+    Route::get('/student_admissions', [\App\Http\Controllers\Student\AdmissionController::class, 'get_all_admissions'])->name('student.all_admissions');
 });
 
 

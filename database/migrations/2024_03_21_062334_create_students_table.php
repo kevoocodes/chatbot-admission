@@ -13,13 +13,14 @@ return new class extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('student_id')->constrained('users')->onDelete('cascade');
+            $table->unsignedBigInteger('student_id');
+            $table->foreign('student_id')->references('id')->on('users');
             $table->string('firstName');
             $table->string('middleName');
             $table->string('lastName');
             $table->string('phoneNumber')->nullable();
             $table->string('nidaNumber')->nullable();
-            $table->string('nacteNumber')->unique()->nullable();
+            $table->string('nacteNumber')->nullable();
             $table->string('email');
             $table->string('address');
             $table->string('region');
@@ -28,7 +29,7 @@ return new class extends Migration
             $table->string('gender');
             $table->string('parent')->nullable();
             $table->string('parentPhonenumber')->nullable();;
-            $table->string('nationality');
+            $table->string('nationality')->nullable();
             $table->timestamps();
         });
         
