@@ -32,8 +32,11 @@
                         <div class="card-body">
                             <div class="px-3">
                                 <div class="auth-logo-box">
-                                    <a href="index.html" class="logo logo-admin"><img style="width: 50px; height: 50px" src="{{ asset('assets/images/turdako.png')}}" alt="
-                                        height="55" alt="logo" class="auth-logo"></a>
+                                    <a href="index.html" class="logo logo-admin"><img style="width: 50px; height: 50px"
+                                            src="{{ asset('assets/images/turdako.png') }}"
+                                            alt="
+                                        height="55" alt="logo"
+                                            class="auth-logo"></a>
                                 </div><!--end auth-logo-box-->
 
                                 <div class="text-center auth-logo-text">
@@ -45,33 +48,25 @@
                                 <form class="form-horizontal auth-form my-4" action="{{ route('student.register') }}"
                                     method="POST">
                                     @csrf
-                                    <div class="error-messages">
-                                        @if (session('error'))
-                                            <div class="alert alert-danger">{{ session('error') }}</div>
-                                        @endif
-                                        @error('nacte_no')
-                                            <div class="text-danger">{{ $message }}</div>
-                                        @enderror
-                                        @error('useremail')
-                                            <div class="text-danger">{{ $message }}</div>
-                                        @enderror
-                                        @error('password')
-                                            <div class="text-danger">{{ $message }}</div>
-                                        @enderror
-                                    </div>
+                                    <!-- Display validation errors -->
+                                    @if (!empty($errors))
+                                       
+                                            <ul>
+                                                @foreach ($errors as $error)
+                                                    <li class="text-danger">{{ $error }}</li>
+                                                @endforeach
+                                            </ul>
+                                       
+                                    @endif
 
-                                    <div class="form-group">
-                                        <label for="useremail">Email</label>
-                                        <div class="input-group mb-3">
-                                            <span class="auth-form-icon">
-                                                <i data-feather="mail" class="icon-xs"></i>
-                                            </span>
-                                            <input type="email" class="form-control" name="useremail" id="useremail"
-                                                placeholder="Enter Email" required> <br>
+                                    <!-- Display $nacteUser error -->
+                                    @if (!empty($error))
+                                        <p class="alert alert-danger">
+                                            {{ $error }}
+                                        </p>
+                                    @endif
 
-                                        </div>
-
-                                    </div><!--end form-group-->
+                                    <!-- Your existing HTML code -->
 
 
                                     <div class="form-group">
@@ -80,14 +75,32 @@
                                             <span class="auth-form-icon">
                                                 <i data-feather="user" class="icon-xs"></i>
                                             </span>
-                                            <input type="text" class="form-control" name="nacte_no" id="username"
-                                                placeholder="Enter username" required> <br>
+                                            <input type="text" class="form-control" name="nacteNumber" id="username"
+                                                placeholder="Enter username" > <br>
 
                                         </div>
 
                                     </div><!--end form-group-->
 
-                              
+
+                                    <div class="form-group">
+                                        <label for="useremail">Email</label>
+                                        <div class="input-group mb-3">
+                                            <span class="auth-form-icon">
+                                                <i data-feather="mail" class="icon-xs"></i>
+                                            </span>
+                                            <input type="email" class="form-control" name="email" id="useremail"
+                                                placeholder="Enter Email" > <br>
+
+                                        </div>
+
+
+                                    </div><!--end form-group-->
+
+
+                                    
+
+
 
                                     <div class="form-group">
                                         <label for="userpassword">Password</label>
@@ -96,7 +109,7 @@
                                                 <i data-feather="lock" class="icon-xs"></i>
                                             </span>
                                             <input type="password" class="form-control" name="password"
-                                                id="userpassword" placeholder="Enter password" required> <br>
+                                                id="userpassword" placeholder="Enter password" > <br>
 
                                         </div>
 
@@ -109,25 +122,14 @@
                                                 <i data-feather="key" class="icon-xs"></i>
                                             </span>
                                             <input type="password" class="form-control" name="password_confirmation"
-                                                id="conf_password" placeholder="Enter Confirm Password" required>
+                                                id="conf_password" placeholder="Enter Confirm Password" >
 
                                         </div>
 
 
                                     </div><!--end form-group-->
 
-                                    <div class="form-group row mt-4">
-                                        <div class="col-sm-12">
-                                            <div class="custom-control custom-switch switch-success">
-                                                <input type="checkbox" class="custom-control-input"
-                                                    id="customSwitchSuccess">
-                                                <label class="custom-control-label text-muted"
-                                                    for="customSwitchSuccess">By registering you agree to the Admission
-                                                    chatbot <a href="#" class="text-primary">Terms of
-                                                        Use</a></label>
-                                            </div>
-                                        </div><!--end col-->
-                                    </div><!--end form-group-->
+
 
                                     <div class="form-group mb-0 row">
                                         <div class="col-12 mt-2">

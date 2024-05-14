@@ -17,7 +17,7 @@ class StudentLoginController extends Controller
     public function authenticate(Request $request)
     {
         $credentials = $request->validate([
-            'nidaNumber' => 'required',
+            'nacteNumber' => 'required',
             'password' => 'required'
         ]);
 
@@ -30,7 +30,7 @@ class StudentLoginController extends Controller
         }
 
         return back()->withErrors([
-            'nidaNumber' => 'Your provided credentials do not match in our records.',
-        ])->withInput($request->only('nidaNumber', 'remember'));
+            'nacteNumber' => 'Your provided credentials do not match in our records.',
+        ])->withInput($request->only('nacteNumber', 'remember'));
     }
 }

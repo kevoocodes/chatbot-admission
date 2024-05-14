@@ -61,12 +61,12 @@
                                             <span class="auth-form-icon">
                                                 <i data-feather="user" class="icon-xs"></i>
                                             </span>
-                                            <input type="text" name="nidaNumber" class="form-control" id="username"
+                                            <input type="text" name="nacteNumber" class="form-control" id="username"
                                                 placeholder="Enter Nacte No">
                                         </div>
 
-                                        @if ($errors->has('nidaNumber'))
-                                            <span class="text-danger">{{ $errors->first('nidaNumber') }}</span>
+                                        @if ($errors->has('nacteNumber'))
+                                            <span class="text-danger">{{ $errors->first('nacteNumber') }}</span>
                                         @endif
                                     </div><!--end form-group-->
 

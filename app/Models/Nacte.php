@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Nacte extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['student_number', 'full_name'];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'nacteid', 'id');
+    }
 }

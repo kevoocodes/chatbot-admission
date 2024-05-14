@@ -13,8 +13,10 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('nidaNumber');
+            $table->unsignedBigInteger('nacteid'); // Assuming it's unsigned big integer as it references primary key
+            $table->foreign('nacteid')->references('id')->on('nactes');
             $table->string('email');
+            $table->string('nacteNumber');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
