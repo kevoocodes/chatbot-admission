@@ -20,7 +20,7 @@ class AdminsTableSeeder extends Seeder
             'firstname' => 'Kelvin',
             'middlename' => 'Aron',
             'lastname' => 'Msindai',
-            'email' => 'kelvin@example.com',
+            'email' => 'admin@example.com',
             'username' => 'admin',
             'role' => 'admin',
             'password' => Hash::make('password'), // password

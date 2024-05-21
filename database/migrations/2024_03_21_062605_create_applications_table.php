@@ -20,6 +20,7 @@ return new class extends Migration
             $table->unsignedBigInteger('course_id');
             $table->foreign('course_id')->references('id')->on('courses');
             $table->date('applicationDate');
+            $table->decimal('amount', 10, 2)->nullable();
             $table->string('session_name');
             $table->string('status'); // Consider using an enum for status
             $table->timestamps();

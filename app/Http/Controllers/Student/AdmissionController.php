@@ -63,7 +63,7 @@ class AdmissionController extends Controller
         //     'university_certificate' => 'required|file',
         // ]);
 
-     
+       $amount = 10000.00;
 
         // Create a new student record
         $student = Student::create([
@@ -93,6 +93,7 @@ class AdmissionController extends Controller
             'course_id' => $request->course_id,
             'applicationDate' => now(),
             'session_name' => $request->session_name,
+            'amount' => $request->amount,
             'status' => 'pending', // Default status
         ]);
 
