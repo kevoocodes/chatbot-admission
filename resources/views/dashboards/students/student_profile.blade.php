@@ -400,4 +400,7 @@
 <script>
     $('.dropify').dropify();
 </script>
+
+<script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+<script src="https://mediafiles.botpress.cloud/b1f8b849-3245-4f9c-ad67-ac5311c41bf1/webchat/config.js" defer></script>
 @include('layouts/footer')
