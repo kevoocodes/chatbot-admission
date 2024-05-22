@@ -35,7 +35,7 @@
                         <div class="card-body">
                             <div class="px-3">
                                 <div class="auth-logo-box">
-                                    <a href="index.html" class="logo logo-admin"><img src="{{ asset('assets/images/turdako.png') }}"
+                                    <a  href="index.html" class="logo logo-admin"><img style="width: 50px; height: 50px" src="{{ asset('assets/images/turdako.png')}}" alt="
                                             height="55" alt="logo" class="auth-logo"></a>
                                 </div><!--end auth-logo-box-->
 
@@ -56,17 +56,17 @@
                                     @csrf
 
                                     <div class="form-group">
-                                        <label for="username">Nacte No</label>
+                                        <label for="username">Necta No</label>
                                         <div class="input-group mb-3">
                                             <span class="auth-form-icon">
                                                 <i data-feather="user" class="icon-xs"></i>
                                             </span>
-                                            <input type="text" name="nidaNumber" class="form-control" id="username"
+                                            <input type="text" name="nacteNumber" class="form-control" id="username"
                                                 placeholder="eg NS.2859.0069.0012">
                                         </div>
 
-                                        @if ($errors->has('nidaNumber'))
-                                            <span class="text-danger">{{ $errors->first('nidaNumber') }}</span>
+                                        @if ($errors->has('nacteNumber'))
+                                            <span class="text-danger">{{ $errors->first('nacteNumber') }}</span>
                                         @endif
                                     </div><!--end form-group-->
 
@@ -113,7 +113,7 @@
 
                             <div class="m-3 text-center text-muted">
                                 <p class="">Don't have an account ? <a href="{{ route('register.students') }}"
-                                        class="text-primary ml-2">Free Resister</a></p>
+                                        class="text-primary ml-2">Free Register</a></p>
                             </div>
                         </div><!--end card-body-->
                     </div><!--end card-->
