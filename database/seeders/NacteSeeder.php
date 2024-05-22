@@ -34,6 +34,10 @@ class NacteSeeder extends Seeder
                 'student_number' => 'NS.0627.0067.2014',
                 'full_name' => 'Veronika Matiko'
             ],
+            [
+                'student_number' => 'S.0332.0137.2005',
+                'full_name' => 'Violet Msuya'
+            ],
         ];
 
         //insert the data int the nactes table

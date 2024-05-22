@@ -94,7 +94,7 @@
                 <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown"
                     href="#" role="button" aria-haspopup="false" aria-expanded="false">
                     <img src="{{asset('assets/profile/profile.png')}}" alt="profile-user" class="rounded-circle" />
-                    <span class="ml-1 nav-user-name hidden-sm"> {{$user->email }} <i class="mdi mdi-chevron-down"></i> </span>
+                    <span class="ml-1 nav-user-name hidden-sm"> {{ $user->nacteNumber }} <i class="mdi mdi-chevron-down"></i> </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
                     <a class="dropdown-item" href="#"><i class="dripicons-user text-muted mr-2"></i>
