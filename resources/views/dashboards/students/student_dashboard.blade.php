@@ -78,20 +78,12 @@
                                         </div>
                                         <div class="met-profile_user-detail">
                                             <h5 class="met-user-name">Student Fullname</h5>
-                                            <p class="mb-0 met-user-name-post"></p>
+                                            <p class="mb-0 met-user-name-post"> {{$user->nacte->full_name}} </p>
                                         </div>
                                     </div>
                                 </div><!--end col-->
                                 <div class="col-lg-4 ml-auto">
-                                    <ul class="list-unstyled personal-detail">
-                                        <li class=""><i class="dripicons-phone mr-2 text-info font-18"></i> <b>
-                                                phone </b> : </li>
-                                        <li class="mt-2"><i class="dripicons-mail text-info font-18 mt-2 mr-2"></i>
-                                            <b> Email </b> </li>
-                                        <li class="mt-2"><i
-                                                class="dripicons-location text-info font-18 mt-2 mr-2"></i>
-                                            <b>Location</b> </li>
-                                    </ul>
+                                    
 
                                 </div><!--end col-->
                             </div><!--end row-->

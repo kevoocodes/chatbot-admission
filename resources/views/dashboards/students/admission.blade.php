@@ -46,10 +46,10 @@
                                 <div class="col-md-6">
                                     <div class="form-group row">
                                         <label for="txtFirstNameBilling"
-                                            class="col-lg-3 col-form-label">Firstname</label>
+                                            class="col-lg-3 col-form-label">Fullname</label>
                                         <div class="col-lg-9">
-                                            <input id="txtFirstNameBilling" name="firstname" type="text"
-                                                class="form-control">
+                                            <input id="txtFirstNameBilling" name="firstname" value="{{$user->nacte->full_name}}" type="text"
+                                                class="form-control" readonly>
                                         </div>
                                         @error('firstname')
                                             <div class="invalid-feedback">{{ $message }}</div>
@@ -57,33 +57,12 @@
                                     </div><!--end form-group-->
                                 </div><!--end col-->
                                 <div class="col-md-6">
-                                    <div class="form-group row">
-                                        <label for="txtLastNameBilling" class="col-lg-3 col-form-label">Middlename
-                                            No.</label>
-                                        <div class="col-lg-9">
-                                            <input id="txtLastNameBilling" name="middlename" type="text"
-                                                class="form-control">
-                                        </div>
-                                        @error('middlename')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                        @enderror
-                                    </div><!--end form-group-->
+                                   
                                 </div><!--end col-->
                             </div><!--end row-->
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="form-group row">
-                                        <label for="txtCompanyBilling" class="col-lg-3 col-form-label">Lastname
-                                        </label>
-                                        <div class="col-lg-9">
-                                            <input id="txtCompanyBilling" name="lastname" type="text"
-                                                class="form-control">
-                                        </div>
-                                        @error('lastname')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                        @enderror
-
-                                    </div><!--end form-group-->
+            
                                 </div><!--end col-->
                                 <div class="col-md-6">
                                     <div class="form-group row">

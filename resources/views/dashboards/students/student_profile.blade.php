@@ -45,19 +45,12 @@
                                         </span>
                                     </div>
                                     <div class="met-profile_user-detail">
-                                        <h5 class="met-user-name">Student Name</h5>                                                        
-                                        <p class="mb-0 met-user-name-post">Course Name</p>
+                                        <h5 class="met-user-name">{{$user->nacte->full_name}}</h5>                                                        
+                                    
                                     </div>
                                 </div>                                                
                             </div><!--end col-->
-                            <div class="col-lg-4 ml-auto">
-                                <ul class="list-unstyled personal-detail">
-                                    <li class=""><i class="dripicons-phone mr-2 text-info font-18"></i> <b> phone </b> : +91 23456 78910</li>
-                                    <li class="mt-2"><i class="dripicons-mail text-info font-18 mt-2 mr-2"></i> <b> Email </b> : mannat.theme@gmail.com</li>
-                                    <li class="mt-2"><i class="dripicons-location text-info font-18 mt-2 mr-2"></i> <b>Location</b> : USA</li>
-                                </ul>
-                   
-                            </div><!--end col-->
+                          
                         </div><!--end row-->
                     </div><!--end f_profile-->                                                                                
                 </div><!--end card-body-->
@@ -84,14 +77,12 @@
                             <div class="card">
                                 <div class="card-body">
                                    <div class="row">
-                                       <div class="col-md-2">
-                                           
-                                       </div>
+                                    
                                        <div class="col-md-6">
                                            <div class="met-basic-detail">
-                                                <h3></h3>
-                                                <p class="text-uppercase font-14"></p>
-                                               
+                                                <p class="text-uppercase font-14"><span style="font-weight: bold">Fullname</span> : {{$user->nacte->full_name}}</p>
+                                                <p class="text-uppercase font-14"> <span style="font-weight: bold">Nacte No</span> : {{$user->nacte->student_number}}</p>
+                                                <p class=" font-14"> <span style="font-weight: bold">Email </span>: {{$user->email}}</p>
                                                 
                                                
                                                 

@@ -62,7 +62,7 @@
                                                 <i data-feather="user" class="icon-xs"></i>
                                             </span>
                                             <input type="text" name="nacteNumber" class="form-control" id="username"
-                                                placeholder="Enter Nacte No">
+                                                placeholder="eg NS.2859.0069.0012">
                                         </div>
 
                                         @if ($errors->has('nacteNumber'))

@@ -15,9 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('student_id');
             $table->foreign('student_id')->references('id')->on('users');
-            $table->string('firstName');
-            $table->string('middleName');
-            $table->string('lastName');
+            $table->string('fullname')->nullable();
             $table->string('phoneNumber')->nullable();
             $table->string('nidaNumber')->nullable();
             $table->string('nacteNumber')->nullable();

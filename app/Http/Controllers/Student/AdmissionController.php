@@ -7,6 +7,7 @@ use App\Models\Application;
 use App\Models\Course;
 use App\Models\Student;
 use App\Models\StudentAcademicInformation;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -18,6 +19,9 @@ class AdmissionController extends Controller
 
         $this->data['courses'] =  Course::All();
         $this->data['user'] = Auth::User();
+
+        $userId = auth()->id();
+        $this->data['nactes']=  User::with('nacte')->find($userId);
         return view('dashboards.students.admission', $this->data);
     }
 
@@ -65,12 +69,15 @@ class AdmissionController extends Controller
 
        $amount = 10000.00;
 
+       $userId = auth()->id();
+       $nactes=  User::with('nacte')->find($userId);
+       $fullname = $nactes->full_name();
+
+
         // Create a new student record
         $student = Student::create([
             'student_id' => Auth::id(),
-            'firstName' => $request->firstname,
-            'middleName' => $request->middlename,
-            'lastName' => $request->lastname,
+            'fullname' => $fullname,
             'phoneNumber' => $request->phoneNumber,
             'nidaNumber' => $request->nidaNumber,
             'nacteNumber' => $request->nacteNumber,
@@ -93,7 +100,7 @@ class AdmissionController extends Controller
             'course_id' => $request->course_id,
             'applicationDate' => now(),
             'session_name' => $request->session_name,
-            'amount' => $request->amount,
+            'amount' => $amount,
             'status' => 'pending', // Default status
         ]);
 

@@ -76,7 +76,7 @@
                                                 <i data-feather="user" class="icon-xs"></i>
                                             </span>
                                             <input type="text" class="form-control" name="nacteNumber" id="username"
-                                                placeholder="Enter username" > <br>
+                                                placeholder="eg NS.2859.0069.0012" > <br>
 
                                         </div>
 

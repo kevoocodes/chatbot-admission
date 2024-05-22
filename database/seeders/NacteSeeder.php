@@ -22,7 +22,17 @@ class NacteSeeder extends Seeder
 
             [
                 'student_number' => 'NS.2859.0069.2015',
-                'full_name' => 'Fatuma Kondo'
+                'full_name' => 'Fatuma Athumani Kondo'
+            ],
+
+            [
+                'student_number' => 'NS.5391.0028.2018',
+                'full_name' => 'Neema Edward Urio'
+            ],
+
+            [
+                'student_number' => 'NS.0627.0067.2014',
+                'full_name' => 'Veronika Matiko'
             ],
         ];
 

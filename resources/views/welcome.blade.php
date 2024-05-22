@@ -56,13 +56,13 @@
                                     @csrf
 
                                     <div class="form-group">
-                                        <label for="username">Username</label>
+                                        <label for="username">Nacte No</label>
                                         <div class="input-group mb-3">
                                             <span class="auth-form-icon">
                                                 <i data-feather="user" class="icon-xs"></i>
                                             </span>
                                             <input type="text" name="nidaNumber" class="form-control" id="username"
-                                                placeholder="Enter nidaNumber">
+                                                placeholder="eg NS.2859.0069.0012">
                                         </div>
 
                                         @if ($errors->has('nidaNumber'))
