@@ -28,6 +28,7 @@ class AdmissionController extends Controller
     public function get_all_admissions()
     {
         $user_id = Auth::User();
+        $this->data['user'] = Auth::User();
         // Retrieve all admissions for the currently logged-in user
         $this->data['admissions'] = Application::where('user_id', $user_id)->get();
 
