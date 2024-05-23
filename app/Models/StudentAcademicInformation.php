@@ -10,6 +10,7 @@ class StudentAcademicInformation extends Model
     use HasFactory;
     protected $fillable = [
         'student_id',
+        'user_id',
         'secondary_school_name',
         'secondary_school_location',
         'secondary_school_certificate',

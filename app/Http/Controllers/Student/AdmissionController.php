@@ -13,72 +13,61 @@ use Illuminate\Support\Facades\Auth;
 
 class AdmissionController extends Controller
 {
-    //
     protected $data = [];
+
+    /**
+     * Display the admission form.
+     *
+     * @return \Illuminate\View\View
+     */
     public function index() {
-
-        $this->data['courses'] =  Course::All();
-        $this->data['user'] = Auth::User();
-
-        $userId = auth()->id();
-        $this->data['nactes']=  User::with('nacte')->find($userId);
+        $this->data['courses'] = Course::all();
+        $this->data['user'] = Auth::user();
+        $this->data['nactes'] = User::with('nacte')->find(auth()->id());
+        
         return view('dashboards.students.admission', $this->data);
     }
 
-    public function get_all_admissions()
-    {
-        $user_id = Auth::User();
-        $this->data['user'] = Auth::User();
-        // Retrieve all admissions for the currently logged-in user
-        $this->data['admissions'] = Application::where('user_id', $user_id)->get();
-
-        // Redirect to the all_admission view, passing the admissions data
+    /**
+     * Retrieve all admissions for the currently logged-in user.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function get_all_admissions() {
+        $this->data['user'] = Auth::user();
+        $this->data['admissions'] = Application::where('user_id', $this->data['user']->id)->get();
+        
         return view('dashboards.students.student_all_admission', $this->data);
     }
 
-    public function store(Request $request)
-    {
-       
-        // Validate the request data
-        // $request->validate([
-        //     'firstname' => 'required',
-        //     'middlename' => 'required',
-        //     'lastname' => 'required',
-        //     'phoneNumber' => 'required',
-        //     'nidaNumber' => 'required',
-        //     'nacteNumber' => 'required',
-        //     'email' => 'required|email',
-        //     'address' => 'required',
-        //     'region' => 'required',
-        //     'postalCode' => 'required',
-        //     'dateOfBirth' => 'required',
-        //     'gender' => 'required',
-        //     'parent' => 'required',
-        //     'parentPhonenumber' => 'required',
-        //     'nationality' => 'required',
-        //     'session_name' => 'required',
-        //     'course_id' => 'required',
-        //     'secondary_school_name' => 'required',
-        //     'secondary_school_location' => 'required',
-        //     'secondary_school_certificate' => 'required|file',
-        //     'high_school_name' => 'required',
-        //     'high_school_location' => 'required',
-        //     'diploma_course' => 'required',
-        //     'diploma_university' => 'required',
-        //     'university_certificate' => 'required|file',
-        // ]);
+    /**
+     * Store the admission form data.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function store(Request $request) {
+        $user = Auth::user();
+        $fullName = $user->nacte->full_name;
 
-       $amount = 10000.00;
+        $student = $this->createStudent($request, $fullName);
+        $this->createApplication($request, $student->id, $user->id); // Pass user ID here
+        $this->createAcademicInformation($request, $student->id);
 
-       $userId = auth()->id();
-       $nactes=  User::with('nacte')->find($userId);
-       $fullname = $nactes->full_name();
+        return redirect()->route('student.admission')->with('success', 'Student information saved successfully.');
+    }
 
-
-        // Create a new student record
-        $student = Student::create([
+    /**
+     * Create a new student record.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param string $fullName
+     * @return \App\Models\Student
+     */
+    private function createStudent(Request $request, string $fullName) {
+        return Student::create([
             'student_id' => Auth::id(),
-            'fullname' => $fullname,
+            'fullname' => $fullName,
             'phoneNumber' => $request->phoneNumber,
             'nidaNumber' => $request->nidaNumber,
             'nacteNumber' => $request->nacteNumber,
@@ -92,25 +81,42 @@ class AdmissionController extends Controller
             'parentPhonenumber' => $request->parentPhonenumber,
             'nationality' => $request->nationality,
         ]);
+    }
 
-        $studentId = $student->id;
-
-        // Create a new application record
-        $application = Application::create([
+    /**
+     * Create a new application record.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param int $studentId
+     * @param int $userId
+     * @return void
+     */
+    private function createApplication(Request $request, int $studentId, int $userId) {
+        Application::create([
+            'user_id' => Auth::id(), // Ensure user_id is set
             'student_id' => $studentId,
             'course_id' => $request->course_id,
             'applicationDate' => now(),
             'session_name' => $request->session_name,
-            'amount' => $amount,
+            'amount' => 10000.00,
             'status' => 'pending', // Default status
         ]);
+    }
 
-        // Create a new student academic information record
+    /**
+     * Create a new student academic information record.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param int $studentId
+     * @return void
+     */
+    private function createAcademicInformation(Request $request, int $studentId) {
         $secondarySchoolCertificateFile = $request->file('secondary_school_certificate');
         $universityCertificateFile = $request->file('university_certificate');
-        
-        $academicInfo = StudentAcademicInformation::create([
+
+        StudentAcademicInformation::create([
             'student_id' => $studentId,
+            'user_id' => Auth::id(), // Ensure user_id is set
             'secondary_school_name' => $request->secondary_school_name,
             'secondary_school_location' => $request->secondary_school_location,
             'secondary_school_certificate' => $secondarySchoolCertificateFile ? file_get_contents($secondarySchoolCertificateFile->getRealPath()) : null,
@@ -120,10 +126,5 @@ class AdmissionController extends Controller
             'diploma_university' => $request->diploma_university,
             'university_certificate' => $universityCertificateFile ? file_get_contents($universityCertificateFile->getRealPath()) : null,
         ]);
-        
-       
-
-        // Redirect or return response
-        return redirect()->route('student.admission')->with('success', 'Student information saved successfully.');
     }
 }
