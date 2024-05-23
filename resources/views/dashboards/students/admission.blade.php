@@ -135,6 +135,32 @@
 
                             <div class="row">
                                 <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label for="txtCityBilling" class="col-lg-3 col-form-label">Phonenumber</label>
+                                        <div class="col-lg-9">
+                                            <input id="txtCityBilling" name="phoneNumber" type="text"
+                                                class="form-control">
+                                        </div>
+                                        @error('phoneNumber')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label for="txtStateProvinceBilling" class="col-lg-3 col-form-label">NidaNumber
+                                        </label>
+                                        <div class="col-lg-9">
+                                            <input id="txtStateProvinceBilling" name="nidaNumber" type="text"
+                                                class="form-control">
+                                        </div>
+
+                                    </div><!--end form-group-->
+                                </div><!--end col-->
+                            </div><!--end row-->
+
+                            <div class="row">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="">Gender</label>
                                         <div class="form-check">
@@ -395,7 +421,7 @@
                                         <label for="txtFirstNameShipping" class="col-lg-3 col-form-label">Name of
                                             Secondary School</label>
                                         <div class="col-lg-9">
-                                            <input id="txtFirstNameShipping" name="o_level_school_name"
+                                            <input id="txtFirstNameShipping" name="secondary_school_name"
                                                 type="text" type="text" class="form-control">
                                         </div>
                                     </div><!--end form-group-->
@@ -405,8 +431,14 @@
                                         <label for="txtLastNameShipping" class="col-lg-3 col-form-label">Secondary
                                             Location</label>
                                         <div class="col-lg-9">
-                                            <input id="txtLastNameShipping" name="secondary_location" type="text"
-                                                class="form-control">
+                                            <input id="txtLastNameShipping" name="secondary_school_location" type="text"
+                                                class="form-control">              'secondary_school_name' => $request->secondary_school_name,
+                                                'secondary_school_location' => $request->secondary_school_location,
+                                                'secondary_school_certificate' => $secondarySchoolCertificateFile ? file_get_contents($secondarySchoolCertificateFile->getRealPath()) : null,
+                                                'high_school_name' => $request->high_school_name,
+                                                'high_school_location' => $request->high_school_location,
+                                                'diploma_course' => $request->diploma_course,
+                                                'diploma_university' => $request->diploma_university,
                                         </div>
                                     </div><!--end form-group-->
                                 </div><!--end col-->
@@ -417,7 +449,7 @@
                                         <label for="txtCompanyShipping" class="col-lg-3 col-form-label">Name of
                                             HighSchool</label>
                                         <div class="col-lg-9">
-                                            <input id="txtCompanyShipping" name="name_of_high_school" type="text"
+                                            <input id="txtCompanyShipping" name="high_school_name" type="text"
                                                 class="form-control">
                                         </div>
                                     </div><!--end form-group-->
@@ -427,7 +459,7 @@
                                         <label for="txtEmailAddressShipping" class="col-lg-3 col-form-label">High
                                             School Location</label>
                                         <div class="col-lg-9">
-                                            <input id="txtEmailAddressShipping" name="txtEmailAddressShipping"
+                                            <input id="txtEmailAddressShipping" name="high_school_location"
                                                 type="text" class="form-control">
                                         </div>
                                     </div><!--end form-group-->
@@ -478,7 +510,7 @@
                                         <label for="txtStateProvinceShipping"
                                             class="col-lg-3 col-form-label">University Name</label>
                                         <div class="col-lg-9">
-                                            <input id="txtStateProvinceShipping" name="universit_name" type="text"
+                                            <input id="txtStateProvinceShipping" name="university_name" type="text"
                                                 class="form-control">
                                         </div>
                                     </div><!--end form-group-->

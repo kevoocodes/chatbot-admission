@@ -53,7 +53,7 @@
                             <li class="breadcrumb-item active"></li>
                         </ol>
                     </div>
-                    <h4 class="page-title">All students</h4>
+                    <h4 class="page-title">All Courses</h4>
                 </div><!--end page-title-box-->
             </div><!--end col-->
         </div>
@@ -79,6 +79,9 @@
                                     <th>Description</th>
                                     <th>Duration</th>
                                     <th>Fees</th>
+                                    <th>
+                                        action
+                                    </th>
 
                                 </tr>
                             </thead>
@@ -93,6 +96,20 @@
                                         <td>{{ $course->description }}</td>
                                         <td>{{ $course->duration }}</td>
                                         <td>{{ $course->fees }}</td>
+                                        <td>
+                                            <a href="{{ route('admin.view_edit_course', $course->id) }}" class="mr-2">
+                                                <i class="fas fa-edit text-info font-16"></i>
+                                            </a>
+                                            <form action="{{ route('admin.destroy_course', $course->id) }}" method="POST" style="display:inline;">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" onclick="return confirm('Are you sure you want to delete?')" style="background:none;border:none;color:inherit;">
+                                                    <i class="fas fa-trash-alt text-danger font-16"></i>
+                                                </button>
+                                            </form>
+                                          
+                                            
+                                        </td>
                                     </tr>
                                 @endforeach
 

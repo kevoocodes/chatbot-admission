@@ -143,7 +143,7 @@
                     <div class=" d-flex justify-content-between">
                         <img src="{{ asset('assets/images/widgets/monthly-re.png') }}" alt="" height="80">
                         <div class="align-self-center">
-                            <h2 class="mt-0 mb-2 font-weight-semibold">Tsh 100000000<span
+                            <h2 class="mt-0 mb-2 font-weight-semibold"> {{ $sumofamount }}<span
                                     class="badge badge-soft-success font-11 ml-2"><i class="fas fa-arrow-up"></i>
                                     8.6%</span></h2>
                             <h4 class="title-text mb-0">Yearly Revenue</h4>
@@ -172,7 +172,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="header-title mt-0 mb-3">Students</h4>
+                    <h4 class="header-title mt-0 mb-3">Applications</h4>
                     <div class="table-responsive">
                         <table class="table">
                             <thead class="thead-light">

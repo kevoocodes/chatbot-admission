@@ -72,11 +72,11 @@
                                     <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                         <thead>
                                         <tr>
-                                            <th>Fullname</th>
-                                            <th>Phonenumber</th>
+                                            {{-- <th>Fullname</th> --}}
+                                            <th>email</th>
                                             <th>Nacte Number</th>
-                                            <th>Nida Number</th>
-                                            <th>Action</th>
+                                         
+                                            {{-- <th>Action</th> --}}
                                         </tr>
                                         </thead>
     
@@ -85,13 +85,13 @@
                                         
                                     @foreach ($students as $student)
                                     <tr>
-                                        <td>{{$student->firstName}}</td>
-                                        <td>{{$student->phoneNumber}}</td>
+                                        {{-- <td>{{$student->fullname}}</td> --}}
+                                        <td>{{$student->email}}</td>
                                         <td>{{$student->nacteNumber}}</td>
-                                        <td>{{$student->nidaNumber}}</td>
-                                        <td>
+                                    
+                                        {{-- <td>
                                             <a href="{{$student->id}}"><i class="fas fa-eye text-success font-16"></i></a>
-                                        </td>
+                                        </td> --}}
                                     </tr>
                                     @endforeach
                                             

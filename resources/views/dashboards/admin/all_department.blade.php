@@ -77,7 +77,7 @@
                                 <tr>
                                     <th>Department Name</th>
                                     <th>Description</th>
-                                
+                                     <th>Action</th>
 
                                 </tr>
                             </thead>
@@ -90,7 +90,20 @@
                                     <tr>
                                         <td>{{ $department->departmentName }}</td>
                                         <td>{{ $department->description }}</td>
-                    
+                                        <td>
+                                            <a href="{{ route('admin.view_edit_department', $department->id) }}" class="mr-2">
+                                                <i class="fas fa-edit text-info font-16"></i>
+                                            </a>
+                                            <form action="{{ route('admin.destroy_department', $department->id) }}" method="POST" style="display:inline;">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" onclick="return confirm('Are you sure you want to delete?')" style="background:none;border:none;color:inherit;">
+                                                    <i class="fas fa-trash-alt text-danger font-16"></i>
+                                                </button>
+                                            </form>
+                                          
+                                            
+                                        </td>
                                     </tr>
                                 @endforeach
 

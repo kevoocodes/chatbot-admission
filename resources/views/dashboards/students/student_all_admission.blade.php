@@ -89,7 +89,7 @@
 
                                 @foreach ($admissions as $admission)
                                     <tr>
-                                        <td>{{ $admission->student->firstName }}</td>
+                                        <td>{{ $admission->student->fullname }}</td>
                                         <td>{{ $admission->student->phoneNumber }}</td>
                                         <td>{{ $admission->student->nacteNumber }}</td>
                                         <td>{{ $admission->applicationDate }}</td>

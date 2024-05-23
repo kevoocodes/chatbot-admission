@@ -15,19 +15,19 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('student_id');
             $table->foreign('student_id')->references('id')->on('users');
-            $table->string('fullname')->nullable();
-            $table->string('phoneNumber')->nullable();
-            $table->string('nidaNumber')->nullable();
-            $table->string('nacteNumber')->nullable();
+            $table->string('fullname');
+            $table->string('phoneNumber');
+            $table->string('nidaNumber');
+            $table->string('nacteNumber');
             $table->string('email');
             $table->string('address');
             $table->string('region');
             $table->string('postalCode');
             $table->date('dateOfBirth');
             $table->string('gender');
-            $table->string('parent')->nullable();
-            $table->string('parentPhonenumber')->nullable();;
-            $table->string('nationality')->nullable();
+            $table->string('parent');
+            $table->string('parentPhonenumber');
+            $table->string('nationality');
             $table->timestamps();
         });
         

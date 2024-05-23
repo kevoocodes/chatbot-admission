@@ -79,7 +79,7 @@
                                     <th>Nacte Number</th>
                                     <th>Application Date</th>
                                     <th>Status</th>
-                                    <th>Action</th>
+                                    {{-- <th>Action</th> --}}
                                 </tr>
                             </thead>
 
@@ -94,9 +94,9 @@
                                         <td>{{ $admission->student->nacteNumber }}</td>
                                         <td>{{ $admission->applicationDate }}</td>
                                         <td>{{ $admission->status }}</td>
-                                        <td>
+                                        {{-- <td>
                                             <a href="{{$admission->id}}"><i class="fas fa-eye text-success font-16"></i></a>
-                                        </td>
+                                        </td> --}}
                                     </tr>
                                 @endforeach
 

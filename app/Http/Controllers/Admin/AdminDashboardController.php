@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Application;
 use App\Models\Course;
 use App\Models\Department;
 use App\Models\Student;
@@ -26,6 +27,7 @@ class AdminDashboardController extends Controller
 
         //return all students
         $this->data['allstudents'] = Student::all();
+        $this->data['sumofamount'] =  Application::sum('amount');
 
         //count registered users
         $this->data['users'] = User::count();

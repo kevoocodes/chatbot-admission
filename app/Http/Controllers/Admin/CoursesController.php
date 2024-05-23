@@ -21,22 +21,54 @@ class CoursesController extends Controller
     }
 
 
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
         $request->validate([
-            'courseName' => 'required|string',
-            'description' => 'required|string',
+            'courseName' => 'required|string|max:255',
+            'description' => 'required|string|max:1000',
             'duration' => 'required|integer',
             'fees' => 'required|numeric',
         ]);
-
-        Course::create([
-            'courseName' => $request->courseName,
-            'description' => $request->description,
-            'duration' => $request->duration,
-            'fees' => $request->fees,
-        ]);
-
-        return redirect()->route('admin.view_add_course')->with('success', 'Course created successfully.');
+    
+        if ($request->has('course_id')) {
+            // Update existing course
+            $course = Course::findOrFail($request->course_id);
+            $course->update([
+                'courseName' => $request->courseName,
+                'description' => $request->description,
+                'duration' => $request->duration,
+                'fees' => $request->fees,
+            ]);
+    
+            return redirect()->route('admin.all_courses')->with('success', 'Course updated successfully.');
+        } else {
+            // Create new course
+            Course::create([
+                'courseName' => $request->courseName,
+                'description' => $request->description,
+                'duration' => $request->duration,
+                'fees' => $request->fees,
+            ]);
+    
+            return redirect()->route('admin.view_add_course')->with('success', 'Course created successfully.');
+        }
     }
+    
+
+      // View to edit an existing course
+      public function viewEditCourse($id)
+      {
+          $this->data['course'] = Course::find($id);
+          return view('dashboards.admin.edit_course',  $this->data);
+      }
+  
+      // Delete an existing course
+      public function destroy($id)
+      {
+          $course = Course::find($id);
+          $course->delete();
+  
+          return redirect()->route('admin.all_courses')->with('success', 'Course deleted successfully.');
+      }
     
 }

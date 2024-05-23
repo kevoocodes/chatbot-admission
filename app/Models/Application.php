@@ -14,6 +14,7 @@ class Application extends Model
         'course_id',
         'applicationDate',
         'session_name',
+        'amount',
         'status',
         // Add all other attributes you want to be fillable here
     ];

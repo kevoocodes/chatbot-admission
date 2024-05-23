@@ -24,15 +24,44 @@ class DepartmentAdminController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'departmentName' => 'required|string',
-            'description' => 'required|string',
+            'departmentName' => 'required|string|max:255',
+            'description' => 'required|string|max:1000',
         ]);
-
-        Department::create([
-            'departmentName' => $request->departmentName,
-            'description' => $request->description,
-        ]);
-
-        return redirect()->route('admin.view_add_department')->with('success', 'Department created successfully.');
+    
+        if ($request->has('department_id')) {
+            // Update existing department
+            $department = Department::findOrFail($request->department_id);
+            $department->update([
+                'departmentName' => $request->departmentName,
+                'description' => $request->description,
+            ]);
+    
+            return redirect()->route('admin.all_departments')->with('success', 'Department updated successfully.');
+        } else {
+            // Create new department
+            Department::create([
+                'departmentName' => $request->departmentName,
+                'description' => $request->description,
+            ]);
+    
+            return redirect()->route('admin.view_add_department')->with('success', 'Department created successfully.');
+        }
     }
+    
+
+      // View to edit an existing course
+      public function viewEditDepartment($id)
+      {
+          $this->data['department'] = Department::find($id);
+          return view('dashboards.admin.edit_department',  $this->data);
+      }
+  
+      // Delete an existing course
+      public function destroy($id)
+      {
+          $department = Department::find($id);
+          $department->delete();
+  
+          return redirect()->route('admin.all_departments')->with('success', 'Department deleted successfully.');
+      }
 }

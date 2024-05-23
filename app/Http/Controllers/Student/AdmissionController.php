@@ -49,8 +49,9 @@ class AdmissionController extends Controller
     public function store(Request $request) {
         $user = Auth::user();
         $fullName = $user->nacte->full_name;
+        $nacte_no = $user->nacte->student_number;
 
-        $student = $this->createStudent($request, $fullName);
+        $student = $this->createStudent($request, $fullName, $nacte_no);
         $this->createApplication($request, $student->id, $user->id); // Pass user ID here
         $this->createAcademicInformation($request, $student->id);
 
@@ -64,13 +65,13 @@ class AdmissionController extends Controller
      * @param string $fullName
      * @return \App\Models\Student
      */
-    private function createStudent(Request $request, string $fullName) {
+    private function createStudent(Request $request, string $fullName, $nacte_no) {
         return Student::create([
             'student_id' => Auth::id(),
             'fullname' => $fullName,
             'phoneNumber' => $request->phoneNumber,
             'nidaNumber' => $request->nidaNumber,
-            'nacteNumber' => $request->nacteNumber,
+            'nacteNumber' => $nacte_no,
             'email' => $request->email,
             'address' => $request->address,
             'region' => $request->region,

@@ -37,10 +37,19 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('/all_departments', [\App\Http\Controllers\Admin\DepartmentAdminController::class, 'index'])->name('admin.all_departments');
     Route::get('/all_admission', [\App\Http\Controllers\Admin\AdmissionAdminController::class, 'all_admission'])->name('admin.all_admissions');
     Route::get('/today_admission', [\App\Http\Controllers\Admin\AdmissionAdminController::class, 'today_admission'])->name('admin.today_admissions');
-    Route::get('/add_course', [\App\Http\Controllers\Admin\CoursesController::class, 'view_add_course'])->name('admin.view_add_course');
-    Route::post('/add_course', [\App\Http\Controllers\Admin\CoursesController::class, 'store'])->name('admin.store_course');
+
     Route::get('/add_department', [\App\Http\Controllers\Admin\DepartmentAdminController::class, 'view_add_department'])->name('admin.view_add_department');
     Route::post('/add_department', [\App\Http\Controllers\Admin\DepartmentAdminController::class, 'store'])->name('admin.store_department');
+
+    //course management
+    Route::get('/view_courses', [\App\Http\Controllers\Admin\CoursesController::class, 'view_add_course'])->name('admin.view_add_course');
+    Route::post('/add_course', [\App\Http\Controllers\Admin\CoursesController::class, 'store'])->name('admin.store_course');
+    Route::get('courses/edit/{id}', [\App\Http\Controllers\Admin\CoursesController::class, 'viewEditCourse'])->name('admin.view_edit_course'); 
+    Route::delete('courses/{id}', [\App\Http\Controllers\Admin\CoursesController::class, 'destroy'])->name('admin.destroy_course');
+
+    //department management
+    Route::get('department/edit/{id}', [\App\Http\Controllers\Admin\DepartmentAdminController::class, 'viewEditDepartment'])->name('admin.view_edit_department'); 
+    Route::delete('department/{id}', [\App\Http\Controllers\Admin\DepartmentAdminController::class, 'destroy'])->name('admin.destroy_department');
 });
 
 
