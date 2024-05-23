@@ -18,13 +18,13 @@ return new class extends Migration
             $table->unsignedBigInteger('student_id');
             $table->foreign('student_id')->references('id')->on('students');
             $table->string('secondary_school_name');
-            $table->string('secondary_school_location');
-            $table->binary('secondary_school_certificate'); // Store as BLOB
-            $table->string('high_school_name');
-            $table->string('high_school_location');
-            $table->string('diploma_course');
-            $table->string('diploma_university');
-            $table->binary('university_certificate'); // Store as BLOB
+            $table->string('secondary_school_location')->nullable();
+            $table->binary('secondary_school_certificate')->nullable(); // Store as BLOB
+            $table->string('high_school_name')->nullable();
+            $table->string('high_school_location')->nullable();
+            $table->string('diploma_course')->nullable();
+            $table->string('diploma_university')->nullable();
+            $table->binary('university_certificate')->nullable(); // Store as BLOB
             $table->timestamps();
         });
         
