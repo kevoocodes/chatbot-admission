@@ -1,6 +1,7 @@
 
 <footer class="footer text-center text-sm-left">
-    &copy; 2024 - 2024 Chatbot 
+    &copy;  2024 Chabot Admission <span class="text-muted d-none d-sm-inline-block float-right">Developed with Tudarko
+    </span>
 </footer><!--end footer-->
 </div>
 <!-- end page content -->
