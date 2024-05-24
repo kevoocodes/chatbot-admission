@@ -106,7 +106,7 @@
                     <h6 class="menu-title">Manage Courses</h6>
                 </div>
                 <ul class="nav">
-                    <li class="nav-item"><a class="nav-link" href="{{route('admin.all_courses')}}">Add Course</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{route('admin.view_add_course')}}">Add Course</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('admin.all_courses') }}">All Courses</a>
                     </li>
                 </ul>
