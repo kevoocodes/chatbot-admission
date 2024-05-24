@@ -28,7 +28,7 @@ class AdminDashboardController extends Controller
 
         //return all students
         //$this->data['allstudents'] = Student::all();
-        $this->data['allstudents'] = DB::table('students')
+        $this->data['applications'] = DB::table('students')
         ->join('nactes', 'students.nacteNumber', '=', 'nactes.student_number')
         ->join('applications', 'students.id', '=', 'applications.student_id')
         ->join('student_academic_information', 'students.id', '=', 'student_academic_information.student_id')

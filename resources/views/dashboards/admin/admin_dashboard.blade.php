@@ -180,27 +180,23 @@
                                     <th>Fullname</th>
                                     <th>Email</th>
                                     <th>Phone No</th>
-                                    <th>Course</th>
+                                    <th>Nacte No</th>
 
-                                    <th>Action</th>
+                                  
                                 </tr><!--end tr-->
                             </thead>
 
                             <tbody>
 
-                                @foreach ($allstudents as $student)
+                                @foreach ($applications as $application)
                                 <tr>
                                     <td><img src="{{ asset('assets/profile/profile.png') }}" alt=""
-                                            class="thumb-sm rounded-circle mr-2">{{$student->firstName}}</td>
-                                    <td>{{$student->email}}</td>
+                                            class="thumb-sm rounded-circle mr-2">{{ $application->student_name }}</td>
+                                    <td>{{ $application->email }}</td>
                                     <td>{{$student->phoneNumber}}</td>
-                                    <td>Computer Science</td>
+                                    <td>{{ $application->nacteNumber }}</td>
 
-                                    <td>
-                                        <a href="#" class="mr-2"><i
-                                                class="fas fa-edit text-info font-16"></i></a>
-                                        <a href="#"><i class="fas fa-trash-alt text-danger font-16"></i></a>
-                                    </td>
+                                    
                                 </tr><!--end tr-->
                                 @endforeach
                           
