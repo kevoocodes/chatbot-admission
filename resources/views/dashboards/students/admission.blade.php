@@ -432,13 +432,7 @@
                                             Location</label>
                                         <div class="col-lg-9">
                                             <input id="txtLastNameShipping" name="secondary_school_location" type="text"
-                                                class="form-control">              'secondary_school_name' => $request->secondary_school_name,
-                                                'secondary_school_location' => $request->secondary_school_location,
-                                                'secondary_school_certificate' => $secondarySchoolCertificateFile ? file_get_contents($secondarySchoolCertificateFile->getRealPath()) : null,
-                                                'high_school_name' => $request->high_school_name,
-                                                'high_school_location' => $request->high_school_location,
-                                                'diploma_course' => $request->diploma_course,
-                                                'diploma_university' => $request->diploma_university,
+                                                class="form-control">              
                                         </div>
                                     </div><!--end form-group-->
                                 </div><!--end col-->
