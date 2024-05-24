@@ -193,7 +193,7 @@
                                     <td><img src="{{ asset('assets/profile/profile.png') }}" alt=""
                                             class="thumb-sm rounded-circle mr-2">{{ $application->student_name }}</td>
                                     <td>{{ $application->email }}</td>
-                                    <td>{{$student->phoneNumber}}</td>
+                                    <td>{{$application->phoneNumber}}</td>
                                     <td>{{ $application->nacteNumber }}</td>
 
                                     
