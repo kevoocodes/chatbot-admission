@@ -77,8 +77,7 @@
                                     <th>Fullname</th>
                                     <th>Phonenumber</th>
                                     <th>Nacte Number</th>
-                                    <th>Application Date</th>
-                                    <th>Status</th>
+                                   
                                     {{-- <th>Action</th> --}}
                                 </tr>
                             </thead>
@@ -89,11 +88,10 @@
 
                                 @foreach ($all_admissions as $admission)
                                     <tr>
-                                        <td>{{ $admission->student->firstName }}</td>
-                                        <td>{{ $admission->student->phoneNumber }}</td>
-                                        <td>{{ $admission->student->nacteNumber }}</td>
-                                        <td>{{ $admission->applicationDate }}</td>
-                                        <td>{{ $admission->status }}</td>
+                                        <td>{{ $admission->student_name}}</td>
+                                        <td>{{ $admission->phoneNumberr }}</td>
+                                        <td>{{ $admission->nacteNumber }}</td>
+                                        {{-- <td>{{ $admission->status }}</td> --}}
                                         {{-- <td>
                                             <a href="{{$admission->id}}"><i class="fas fa-eye text-success font-16"></i></a>
                                         </td> --}}
