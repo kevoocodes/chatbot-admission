@@ -9,6 +9,7 @@ use App\Models\Department;
 use App\Models\Student;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AdminDashboardController extends Controller
 {
@@ -57,6 +58,6 @@ class AdminDashboardController extends Controller
     }
 }
 
- $this->data['getadmissions'] = DB::table('nactes')->select('users.*', )
+
 
 
