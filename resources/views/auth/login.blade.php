@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 
 
@@ -144,4 +144,4 @@
 
 <!-- Mirrored from mannatthemes.com/metrica_mvc5/default/auth-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 07 Jan 2024 12:51:38 GMT -->
 
-</html>
+</html> --}}
