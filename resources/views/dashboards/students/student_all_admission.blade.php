@@ -118,7 +118,7 @@
 
 
     <footer class="footer text-center text-sm-left">
-        &copy;  2024 Chabot Admission <span class="text-muted d-none d-sm-inline-block float-right">Developed with Tudarko
+        &copy;  2024 Chabot Admission <span class="text-muted d-none d-sm-inline-block float-right">Developed with TudarCo
         </span>
     </footer><!--end footer-->
     </div>
